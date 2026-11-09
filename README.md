@@ -1,1 +1,1 @@
-Website untuk Lomba Website Desing AI   
+Website untuk Lomba Website Design AI   
