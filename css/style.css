@@ -1,0 +1,30 @@
+body {
+    background-color: #FFF8EC;
+}
+
+.get-started-btn {
+    background-color: #58cc02;
+    color: #FFFFFF;
+    font-family: "Jetbrain Mono", monospace;
+    font-size: 15px;
+    font-weight: 700px;
+    letter-spacing: 0.8px;
+    padding: 12px 24px;
+
+    border: none;
+    border-radius: 16px;
+
+    box-shadow: 0 4px 0 #46a302;
+
+    cursor: pointer;
+    transition: filter 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.get-started-btn:hover {
+    filter: brightness(1.05);
+}
+
+.get-started-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #46a302;
+}
