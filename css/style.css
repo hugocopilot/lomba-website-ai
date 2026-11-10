@@ -2,29 +2,17 @@ body {
     background-color: #FFF8EC;
 }
 
-.get-started-btn {
-    background-color: #F59E0B;
-    color: #3B2A12;;
-    font-family: "Jetbrain Mono", monospace;
-    font-size: 15px;
-    font-weight: 700px;
-    letter-spacing: 0.8px;
-    padding: 12px 24px;
-
-    border: none;
-    border-radius: 16px;
-
-    box-shadow: 0 4px 0 #B45309;
-
-    cursor: pointer;
-    transition: filter 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease;
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    min-height: 80vh;
+    padding: 24px;
 }
 
-.get-started-btn:hover {
-    filter: brightness(1.05);
-}
-
-.get-started-btn:active {
-    transform: translateY(4px);
-    box-shadow: 0 0 0 #B45309;
+.hero-img {
+    flex: 1 1 0;
+    max-width: 520px;
+    min-width: 0;
 }
