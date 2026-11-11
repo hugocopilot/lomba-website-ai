@@ -11,5 +11,6 @@
 .splash-logo {
     width: 140px;
     opacity: 0;
-    transform-s
+    transform: scale(0.6);
+    ani
 }
