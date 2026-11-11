@@ -5,5 +5,7 @@
     place-items: center;
     background: #FFFFFF;
     z-index: 9999;
-    animation: splash-out 0.6 ease 2.4s forwards
+    animation: splash-out 0.6 ease 2.4s forwards;
 }
+
+.splash-logo
