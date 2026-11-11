@@ -8,4 +8,8 @@
     animation: splash-out 0.6 ease 2.4s forwards;
 }
 
-.splash-logo
+.splash-logo {
+    width: 140px;
+    opacity: 0;
+    transform-s
+}
