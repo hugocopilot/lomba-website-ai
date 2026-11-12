@@ -31,9 +31,15 @@ def has_nav_links(html):
 def check(path):
     html = path.read_text(encoding="utf-8")
     return {
-        ""
+        "Navigation menu (<nav>)": has_tag(html, "nav"),
+        "Hero/header (<h1>)": has_tag(html, "h1"),
+        "Footer (<footer>)": has_tag(html, "footer"),
+        "CTA (button or link outside nav/footer)": has_cta(html),
+        "Image (<img>)": has_tag(html, "img"),
+        "Responsive (viewport meta)": has_viewport(html),
+        "Clear structure (h2 or section)": has_tag(html, "h2") or has_tag(html, "section"),
+        "Working nav links": has_nav_links(html),
     }
-
 def main():
     print(LOGO)
     print("Checking...")
