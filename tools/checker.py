@@ -34,7 +34,7 @@ def check(path):
         "Navigation menu (<nav>)": has_tag(html, "nav"),
         "Hero/header (<h1>)": has_tag(html, "h1"),
         "Footer (<footer>)": has_tag(html, "footer"),
-        "CTA (Call)": has_cta(html),
+        "CTA (Call-to-Action)": has_cta(html),
         "Image (<img>)": has_tag(html, "img"),
         "Responsive (viewport meta)": has_viewport(html),
         "Clear structure (h2 / section)": has_tag(html, "h2") or has_tag(html, "section"),
