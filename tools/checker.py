@@ -16,7 +16,7 @@ def has_viewport(html):
     return re.search(r'<meta[^>+name=["\']viewport["\']', html, re.I) is not None
 
 def has_cta(html):
-    b = re.sub(r"<(nav|footer)\b.*")
+    b = re.sub(r"<(nav|footer)\b.*?</nav")
 
 def check():
     print(LOGO)
