@@ -56,21 +56,35 @@ def find_files(folder, ignore):
     return [f for f in sorted(folder.rglob("*.html"))
             if not ignore & set(f.relative_to(folder).parts[:-1])]
 
-def main():
-    sys.stdout.write(LOGO + "\n")
-    folder = Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()
-    files = sorted(folder.rglob("*.html"))
-    sys.stdout.write(f"Checking {len(files)} file(s) in {folder}\n")
+def build_report(folder, ignore):
+    files = find_files(folder, ignore)
     start = time.perf_counter()
+    results = {f: check(f) for f in files}
+    ms = (time.perf_counter() - start) * 1000
+    lines = [f"Checking {len(files)} file(s) in {folder}"]
+    for f, res in results.items():
+        lines.append(f"\n{f.relative_to(folder)}")
+        lines += [f"  [{'OK' if ok else '--'}] {name}" for name, ok in res.items()]
+    lines.append(f"\nDone in {ms:.2f} ms")
+    return "\n".join(lines)
 
-    for f in files:
-        sys.stdout.write(f"\n{f}\n")
-        for name, ok in check(f).items():
-            sys.stdout.write(f"  [{'OK' if ok else '--'}] {name}\n")
-
-    elapsed = time.perf_counter() - start
-
-    sys.stdout.write(f"\nDone in {elapsed * 1000:.8f} ms\n")
+def main():
+    args = parse_args()
+    default = Path(__file__).resolve().parent.parent
+    folder = Path(args.folder).resolve() if args.folder else default
+    ignore = DEFAULT_IGNORE | set(args.ignore)
+    try:
+        while True:
+            report = build_report(folder, ignore)
+            if args.live:
+                sys.stdout.write("\033[H\033[J")
+            sys.stdout.write(LOGO + report + "\n")
+            sys.stdout.flush()
+            if not args.live:
+                break
+            time.sleep(1)
+    except KeyboardInterrupt:
+        sys.stdout.write("\nStopped.\n")
 
 if __name__ == "__main__":
     main()
