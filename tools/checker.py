@@ -17,7 +17,7 @@ def parse_args():
     p = argparse.ArgumentParser(description="Checker V1 For Competition")
     p.add_argument("folder", nargs="?", help="folder to scan (default: project root)")
     p.add_argument("--ignore", action="append", default=[], metavar="FOLDER",
-                   help="folder name to skip (can be repeated)")
+                   help="ignore folder")
     p.add_argument("--live", action="store_true", help="re-check every 1000 ms")
     return p.parse_args()
 
