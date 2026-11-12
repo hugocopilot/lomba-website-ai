@@ -10,7 +10,7 @@ LOGO = r"""
 """
 
 def has_tag(html, tag):
-    return re.search(rf"<")
+    return re.search(rf"<{tag}[\s]")
 
 def check():
     print(LOGO)
