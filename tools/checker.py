@@ -4,6 +4,7 @@ import re
 import sys
 import time
 
+DEFAULT_IGNORE = {"tools", "node_modules", ".venv", ".git"}
 LOGO = r"""
    ________  __    _    __     ___      ____________
   / ____/ / / /   | |  / /    <  /     / ____/ ____/
