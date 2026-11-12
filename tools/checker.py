@@ -13,6 +13,14 @@ LOGO = r"""
 \____/_/ /_/      |___/     /_/     /_/    \____/   
 """
 
+def parse_args():
+    p = argparse.ArgumentParser(description="HTML requirements checker")
+    p.add_argument("folder", nargs="?", help="folder to scan (default: project root)")
+    p.add_argument("--ignore", action="append", default=[], metavar="FOLDER",
+                   help="folder name to skip (can be repeated)")
+    p.add_argument("--live", action="store_true", help="re-check every 1000 ms")
+    return p.parse_args()
+
 def has_tag(html, tag):
     return re.search(rf"<{tag}[\s>]", html, re.I) is not None
 
