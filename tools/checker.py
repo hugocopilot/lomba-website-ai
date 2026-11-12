@@ -8,8 +8,11 @@ LOGO = r"""
 \____/_/ /_/      |___/     /_/     /_/    \____/   
 """
 
+
+
 def check():
     print(LOGO)
+    print("Checking...")
 
 if __name__ == "__main__":
     check()
