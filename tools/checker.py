@@ -19,6 +19,9 @@ def has_cta(html):
     b = re.sub(r"<(nav|footer)\b.*?</\1>", "", html, flags=re.I | re.S)
     return has_tag(b, "button") or has_tag(b, "a")
 
+def has_nav_links(html):
+    
+
 def check():
     print(LOGO)
     print("Checking...")
