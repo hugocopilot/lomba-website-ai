@@ -12,7 +12,7 @@
     width: 140px;
     opacity: 0;
     transform: scale(0.6);
-    animation: logo-in 0.9; cubic-bezier(.2, .9, .3, 1.2) 0.3s forwards;
+    animation: logo-in 0.9s cubic-bezier(.2, .9, .3, 1.2) 0.3s forwards;
 }
 
 @keyframes logo-in {
