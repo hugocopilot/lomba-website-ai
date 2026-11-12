@@ -44,12 +44,13 @@ def check(path):
 
 def main():
     sys.stdout.write(LOGO)
-    sys.stdout.write("Checking...")
-    folder = Path(sys.argv[1] if len(sys.argv) > 1 else ".")
-    for f in sorted(folder.rglob("*.html")):
-        sys.stdout.write(f"\n{f}")
+    folder = Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()
+    files = sorted(folder.rglob("*.html"))
+    sys.stdout.write(f"Checking {len(files)} file(s) in {folder}\n")
+    for f in files:
+        sys.stdout.write(f"\n{f}\n")
         for name, ok in check(f).items():
-            sys.stdout.write(f"  [{'OK' if ok else '--'}] {name}")
+            sys.stdout.write(f"  [{'OK' if ok else '--'}] {name}\n")
 
 if __name__ == "__main__":
     main()
