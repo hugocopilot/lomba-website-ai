@@ -30,7 +30,9 @@ def has_nav_links(html):
 
 def check(path):
     html = path.read_text(encoding="utf-8")
-    
+    return {
+        ""
+    }
 
 def main():
     print(LOGO)
