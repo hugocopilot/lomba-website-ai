@@ -70,7 +70,7 @@ def build_report(folder, ignore):
     lines = [f"Checking {len(files)} file(s) in {folder}"]
     for f, res in results.items():
         lines.append(f"\n{f.relative_to(folder)}")
-        lines += [f"  [{'OK' if ok else '--'}] {name}" for name, ok in res.items()]
+        lines += [f"  [{f'{GREEN}OK{RESET}' if ok else '--'}] {name}" for name, ok in res.items()]
     lines.append(f"\nDone in {ms:.2f} ms")
     return "\n".join(lines)
 
