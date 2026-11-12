@@ -72,7 +72,7 @@ def build_report(folder, ignore):
     for f, res in results.items():
         lines.append(f"\n{f.relative_to(folder)}")
         lines += [f"  [{f'{GREEN}OK{RESET}' if ok else f'{RED}--{RESET}'}] {name}" for name, ok in res.items()]
-        
+
     lines.append(f"\nDone in {ms:.8f} ms")
     return "\n".join(lines)
 
@@ -81,6 +81,7 @@ def main():
     default = Path(__file__).resolve().parent.parent
     folder = Path(args.folder).resolve() if args.folder else default
     ignore = DEFAULT_IGNORE | set(args.ignore)
+
     try:
         while True:
             report = build_report(folder, ignore)
@@ -91,6 +92,7 @@ def main():
             if not args.live:
                 break
             time.sleep(1)
+            
     except KeyboardInterrupt:
         sys.stdout.write("\nStopped.\n")
 
