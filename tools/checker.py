@@ -20,7 +20,7 @@ def has_cta(html):
     return has_tag(b, "button") or has_tag(b, "a")
 
 def has_nav_links(html):
-    n = re.findall()
+    n = re.findall(r"<nav\b.")
 
 def check():
     print(LOGO)
