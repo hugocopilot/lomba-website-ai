@@ -44,6 +44,11 @@ def check(path):
 def main():
     print(LOGO)
     print("Checking...")
+    folder = Path(sys.argv[1] if len(sys.argv) > 1 else ".")
+    for f in sorted(folder.rglob("*.html")):
+        print(f"\n{f}")
+        for name, ok in check(f).items():
+            print(f"  [{'OK' if ok else '--'}] {name}")
 
 if __name__ == "__main__":
     main()
