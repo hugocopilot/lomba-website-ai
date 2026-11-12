@@ -37,7 +37,7 @@ def check(path):
         "CTA (button or link outside nav/footer)": has_cta(html),
         "Image (<img>)": has_tag(html, "img"),
         "Responsive (viewport meta)": has_viewport(html),
-        "Clear structure (h2 or section)": has_tag(html, "h2") or has_tag(html, "section"),
+        "Clear structure (h2 / section)": has_tag(html, "h2") or has_tag(html, "section"),
         "Working nav links": has_nav_links(html),
     }
 
