@@ -36,7 +36,7 @@ def check(path):
         "Footer (<footer>)": has_tag(html, "footer"),
         "CTA (Call-to-Action)": has_cta(html),
         "Image (<img>)": has_tag(html, "img"),
-        "Responsive (meta)": has_viewport(html),
+        "Responsive (meta name=viewport)": has_viewport(html),
         "Clear structure (h2 / section)": has_tag(html, "h2") or has_tag(html, "section"),
         "Working nav links": has_nav_links(html),
     }
