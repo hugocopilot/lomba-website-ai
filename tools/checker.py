@@ -10,7 +10,10 @@ LOGO = r"""
 """
 
 def has_tag(html, tag):
-    return re.search(rf"<{tag}[\s>]", html)
+    return re.search(rf"<{tag}[\s>]", html, re.I) is not None
+
+def has_viewport():
+    return re.search()
 
 def check():
     print(LOGO)
