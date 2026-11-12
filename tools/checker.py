@@ -9,7 +9,7 @@ LOGO = r"""
 \____/_/ /_/      |___/     /_/     /_/    \____/   
 """
 
-
+def has_tag(html, tag)
 
 def check():
     print(LOGO)
