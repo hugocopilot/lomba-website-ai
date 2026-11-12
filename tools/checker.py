@@ -14,7 +14,7 @@ LOGO = r"""
 """
 
 def parse_args():
-    p = argparse.ArgumentParser(description="Checker V1")
+    p = argparse.ArgumentParser(description="Checker V1 For Competition")
     p.add_argument("folder", nargs="?", help="folder to scan (default: project root)")
     p.add_argument("--ignore", action="append", default=[], metavar="FOLDER",
                    help="folder name to skip (can be repeated)")
