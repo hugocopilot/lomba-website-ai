@@ -16,11 +16,16 @@ def has_viewport(html):
     return re.search(r'<meta[^>+name=["\']viewport["\']', html, re.I) is not None
 
 def has_cta(html):
-    b = re.sub(r"<(nav|footer)\b.*?</\1>", "", html, flags=re.I | re.S)
-    return has_tag(b, "button") or has_tag(b, "a")
+    body = re.sub(r"<(nav|footer)\b.*?</\1>", "", html, flags=re.I | re.S)
+    return has_tag(body, "button") or has_tag(body, "a")
 
 def has_nav_links(html):
-    n = re.findall(r"<nav\b.*?,/nav>", html, re.I)
+    navs = re.findall(r"<nav\b.*?,/nav>", html, re.I | re.S)
+    for nav in navs:
+        for href in re.findall(r'href=["\']([^"\']*)["\']', nav, re.I):
+            if href.strip() not in ("", "#"):
+                return True
+
 
 def check():
     print(LOGO)
