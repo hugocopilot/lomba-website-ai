@@ -25,7 +25,7 @@ def has_nav_links(html):
         for href in re.findall(r'href=["\']([^"\']*)["\']', nav, re.I):
             if href.strip() not in ("", "#"):
                 return True
-
+    return False
 
 def check():
     print(LOGO)
