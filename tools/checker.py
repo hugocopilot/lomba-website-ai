@@ -28,9 +28,12 @@ def has_nav_links(html):
                 return True
     return False
 
-def check():
+def check(path):
+    html = path.read_text
+
+def main():
     print(LOGO)
     print("Checking...")
 
 if __name__ == "__main__":
-    check()
+    main()
