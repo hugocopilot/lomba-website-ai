@@ -10,7 +10,7 @@ GREEN = "\033[0;32m"
 BLUE = "\033[0;34m"
 
 DEFAULT_IGNORE = {"tools", "node_modules", ".venv", ".git", "pendidikan-for-later"}
-LOGO = r"""
+LOGO = rf"""{RED}
    ________  __    _    __     ___      ____________
   / ____/ / / /   | |  / /    <  /     / ____/ ____/
  / /   / /_/ /____| | / /_____/ /_____/ /_  / /     
