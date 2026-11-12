@@ -47,10 +47,12 @@ def main():
     folder = Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()
     files = sorted(folder.rglob("*.html"))
     sys.stdout.write(f"Checking {len(files)} file(s) in {folder}\n")
+    start = time.perf_counter()
+
     for f in files:
         sys.stdout.write(f"\n{f}\n")
         for name, ok in check(f).items():
             sys.stdout.write(f"  [{'OK' if ok else '--'}] {name}\n")
 
-if __name__ == "__main__":
+            if __name__ == "__main__":
     main()
