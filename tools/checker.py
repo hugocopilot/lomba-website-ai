@@ -13,7 +13,7 @@ def has_tag(html, tag):
     return re.search(rf"<{tag}[\s>]", html, re.I) is not None
 
 def has_viewport():
-    return re.search(r'<meta[^>+name=["\']]')
+    return re.search(r'<meta[^>+name=["\']viewport[]')
 
 def check():
     print(LOGO)
