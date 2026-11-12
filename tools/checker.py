@@ -52,6 +52,10 @@ def check(path):
         "Working nav links": has_nav_links(html),
     }
 
+def find_files(folder, ignore):
+    return [f for f in sorted(folder.rglob("*.html"))
+            if not ignore & set(f.relative_to(folder).parts[:-1])]
+
 def main():
     sys.stdout.write(LOGO + "\n")
     folder = Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()
