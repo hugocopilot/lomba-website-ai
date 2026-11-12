@@ -1,6 +1,7 @@
 from pathlib import Path
 import re
 import asyncio
+import sys
 
 LOGO = r"""
    ________  __    _    __     ___      ____________
@@ -46,9 +47,9 @@ def main():
     print("Checking...")
     folder = Path(sys.argv[1] if len(sys.argv) > 1 else ".")
     for f in sorted(folder.rglob("*.html")):
-        print(f"\n{f}")
+        sys.stdout.write(f"\n{f}")
         for name, ok in check(f).items():
-            print(f"  [{'OK' if ok else '--'}] {name}")
+            sys.stdout.write(f"  [{'OK' if ok else '--'}] {name}")
 
 if __name__ == "__main__":
     main()
