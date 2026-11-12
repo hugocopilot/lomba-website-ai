@@ -44,7 +44,7 @@ def check(path):
 
 def main():
     print(LOGO)
-    print("Checking...")
+    sys.stdout.write("Checking...")
     folder = Path(sys.argv[1] if len(sys.argv) > 1 else ".")
     for f in sorted(folder.rglob("*.html")):
         sys.stdout.write(f"\n{f}")
