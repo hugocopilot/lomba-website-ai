@@ -86,6 +86,7 @@ def main():
     try:
         while True:
             report = build_report(folder, ignore)
+            if os.name == "nt"
             if args.live:
                 sys.stdout.write("\033[H\033[J")
             sys.stdout.write(LOGO + report + "\n")
