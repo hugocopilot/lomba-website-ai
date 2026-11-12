@@ -18,7 +18,7 @@ def parse_args():
     p.add_argument("folder", nargs="?", help="ts (Default : root project)")
     p.add_argument("--ignore", action="append", default=[], metavar="FOLDER",
                    help="ignore folder")
-    p.add_argument("--live", action="store_true", help="re-check every 1000 ms")
+    p.add_argument("--live", action="store_true", help="every 1000ms check")
     return p.parse_args()
 
 def has_tag(html, tag):
