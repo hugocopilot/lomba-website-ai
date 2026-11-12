@@ -54,5 +54,9 @@ def main():
         for name, ok in check(f).items():
             sys.stdout.write(f"  [{'OK' if ok else '--'}] {name}\n")
 
-            if __name__ == "__main__":
+    elapsed = time.perf_counter() - start
+
+    sys.stdout.write(f"\nDone in {elapsed * 1000:.8f} ms\n")
+
+if __name__ == "__main__":
     main()
