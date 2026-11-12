@@ -40,6 +40,7 @@ def check(path):
         "Clear structure (h2 or section)": has_tag(html, "h2") or has_tag(html, "section"),
         "Working nav links": has_nav_links(html),
     }
+
 def main():
     print(LOGO)
     print("Checking...")
