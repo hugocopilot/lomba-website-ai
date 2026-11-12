@@ -3,6 +3,7 @@ import argparse
 import re
 import sys
 import time
+import os
 
 BLACK = "\033[0;30m"
 RED = "\033[0;31m"
@@ -92,7 +93,7 @@ def main():
             if not args.live:
                 break
             time.sleep(1)
-            
+
     except KeyboardInterrupt:
         sys.stdout.write("\nStopped.\n")
 
