@@ -68,10 +68,11 @@ def build_report(folder, ignore):
     results = {f: check(f) for f in files}
     ms = (time.perf_counter() - start) * 1000
     lines = [f"Checking {len(files)} file(s) in {folder}"]
-    
+
     for f, res in results.items():
         lines.append(f"\n{f.relative_to(folder)}")
         lines += [f"  [{f'{GREEN}OK{RESET}' if ok else f'{RED}--{RESET}'}] {name}" for name, ok in res.items()]
+        
     lines.append(f"\nDone in {ms:.8f} ms")
     return "\n".join(lines)
 
