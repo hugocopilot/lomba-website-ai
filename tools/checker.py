@@ -81,7 +81,7 @@ def build_report(folder, ignore):
 
 def save_report(report, out):
     clean = ANSI.sub("", report)
-    out.write_text(clean + '\n', encoding="")
+    out.write_text(clean + '\n', encoding="utf-8")
 
 def main():
     args = parse_args()
@@ -100,6 +100,9 @@ def main():
 
             if args.live:
                 sys.stdout.write("\033[H\033[J")
+
+            if args.out:
+                save_report(report, Path(args.out))
                 
             sys.stdout.write(LOGO + report + "\n")
             sys.stdout.flush()
