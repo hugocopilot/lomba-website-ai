@@ -7,5 +7,5 @@
 }
 
 .splash-logo {
-	animation: fade;
+	animation: fade-in 1s ease both;
 }
