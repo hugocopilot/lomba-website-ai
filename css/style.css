@@ -10,7 +10,7 @@
 
 .splash-logo {
 	animation: logo-in 2s cubic-bezier(0.22, 1, 0.36, 1) both,
-			  	 
+			   logo-out 2s
 }
 
 @keyframes logo-in {
@@ -18,7 +18,7 @@
   to   { opacity: 1; transform: scale(1); }
 }
 
-@keyframes logo-in {
+@keyframes logo-out {
   from { opacity: 1; transform: scale(1); }
   to   { opacity: 0; transform: scale(0); }
 }
