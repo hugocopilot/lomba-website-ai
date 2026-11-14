@@ -1,29 +1,34 @@
-.splash { overflow: hidden; }
-.splash-bg { position: absolute ; inset: 0; }
-.splash-logo {
-	width: 140px;
-	position: relative;
-	z-index: 1;
-	animation:
-		logo-in 2s cubic-bezier(0.22, 1, 0.36, 1) both,
-		logo-out 0.6s ease-in 2s forwards;
-}
+.splash { overflow: hidden; animation: fade-out 0.5s ease 2.6s forwards; }
 
 .shape {
 	position: absolute;
-	animation: 
-		shape-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) var(--delay) both,
+	--rot: 0deg;
+	animation:
+		shape-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) var(--delay) both,
 		shape-out 0.6s cubic-bezier(0.64, 0, 0.78, 0) 2s forwards;
 }
-.triangle { clip-path: polygon(50% 0, 0 100%, 100% 100%); }
-.circle { border-radius: 50%; }
+
+.circle {
+	width: 90vmax; height: 90vmax; left: -30vmax; top: -20vmax;
+	border-radius: 50%; background: #16a34a;
+	--delay: 0s; --dx: -120vw; --dy: 0vh;
+}
+.square {
+	width: 80vmax; height: 80vmax; right: -30vmax; bottom: -25vmax;
+	background: #facc15; --rot: 25deg;
+	--delay: 0.2s; --dx: 120vw; --dy: 0vh;
+}
+.triangle {
+	width: 100vmax; height: 90vmax; left: -10vmax; bottom: -35vmax;
+	clip-path: polygon(50% 0, 0 100%, 100% 100%); background: #38bdf8;
+	--delay: 0.4s; --dx: 0vw; --dy: 120vh;
+}
 
 @keyframes shape-in {
 	from { opacity: 0; transform: scale(0) rotate(0deg); }
-	to { opacity: 0.8; transform: scale(1) rotate(var(--rot)); }
+	to   { opacity: 0.85; transform: scale(1) rotate(var(--rot)); }
 }
-
 @keyframes shape-out {
-	from { opacity: 0.8; transform: scale(1) rotate(var(--rot)); }
-	to { opacity: 0; transform: translate(var(--dx), var(--dy) scale(1) rotate(calc(var(--rot) + 180deg)));}
+	from { opacity: 0.85; transform: scale(1) rotate(var(--rot)); }
+	to   { opacity: 0; transform: translate(var(--dx), var(--dy)) rotate(var(--rot)); }
 }
