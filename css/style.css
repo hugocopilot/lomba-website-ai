@@ -4,10 +4,11 @@
 	display: grid;
 	place-items: center;
 	background: #FFFFFF;
+	animation: fade-out 0.5s ease 2s forwards;
 }
 
 .splash-logo {
-	animation: fade-in 1s ease 2s forwards fade-out 1s;
+	animation: fade-in 1s ease both;
 }
 
 @keyframes fade-in {
