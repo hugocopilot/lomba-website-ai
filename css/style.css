@@ -1,3 +1,4 @@
 .splash { overflow: hidden; }
 .splash-bg { position: absolute ; inset: 0; }
-.splash-logo {}
+.splash-logo { position: relative; z-index: 1; }
+
