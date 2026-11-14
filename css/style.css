@@ -5,3 +5,7 @@
 	place-items: center;
 	background: #FFFFFF;
 }
+
+.splash-logo {
+	animation: fade;
+}
