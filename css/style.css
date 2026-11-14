@@ -1,4 +1,5 @@
 .splash {
+	z-index: 9999;
 	position: fixed;
 	inset: 0; 
 	display: grid;
