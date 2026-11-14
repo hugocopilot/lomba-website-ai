@@ -2,3 +2,21 @@
 .splash-bg { position: absolute ; inset: 0; }
 .splash-logo { position: relative; z-index: 1; }
 
+.shape {
+	position: absolute;
+	animation: 
+    shape-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) var(--delay) both,
+    shape-out 0.6s cubic-bezier(0.64, 0, 0.78, 0) 2s forwards;
+}
+.triangle { clip-path: polygon(50% 0, 0 100%, 100% 100%); }
+.circle { border-radius: 50%; }
+
+@keyframes shape-in {
+	from { opacity: 0; transform: scale(0) rotate(0deg); }
+	to { opacity: 0.8; transform: scale(1) rotate(var(--rot)); }
+}
+
+@keyframes shape-out {
+	from { opacity: 0.8; transform: scale(1) rotate(var(--rot)); }
+	to { opacity: 0; transform: translate((var(--dx), var(--dy)) scale(1) rotate(calc(var(--rot) + 180deg)));}
+}
