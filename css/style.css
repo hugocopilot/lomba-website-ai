@@ -1,5 +1,4 @@
 .splash {
-	--s: 150vmax;
 	position: fixed;
 	inset: 0;
 	display: grid;
@@ -21,36 +20,31 @@
 
 .shape {
 	position: absolute;
-	--rot: 0deg;
+	top: 0;
+	height: 100%;
+	width: 33.34%;
 	animation:
 		shape-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) var(--delay) both,
 		shape-out 0.6s cubic-bezier(0.64, 0, 0.78, 0) 2s forwards;
 }
 
-.circle {
-	width: var(--s); height: var(--s);
-	left: calc(var(--s) * -0.35);
-	top: calc(var(--s) * -0.25);
-	border-radius: 50%; background: #16a34a;
-	--delay: 0s; --dx: -120vw; --dy: 0vh;
-}
-.square {
-	width: var(--s); height: var(--s);
-	right: calc(var(--s) * -0.35);
-	bottom: calc(var(--s) * -0.3);
-	background: #facc15; --rot: 25deg;
-	--delay: 0.2s; --dx: 120vw; --dy: 0vh;
-}
-.triangle {
-	width: calc(var(--s) * 1.3);
-	height: calc(var(--s) * 1.1);
+.shape::before {
+	content: "";
+	position: absolute;
 	left: 50%;
-	margin-left: calc(var(--s) * -0.65);
-	bottom: calc(var(--s) * -0.35);
-	clip-path: polygon(50% 0, 0 100%, 100% 100%);
-	background: #38bdf8;
-	--delay: 0.4s; --dx: 0vw; --dy: 120vh;
+	top: 50%;
+	width: 70%;
+	aspect-ratio: 1;
+	translate: -50% -50%;
+	background: rgba(255, 255, 255, 0.3);
 }
+
+.circle   { left: 0;      background: #16a34a; --delay: 0s;   --dx: -120vw; --dy: 0vh; }
+.square   { left: 33.33%; background: #facc15; --delay: 0.2s; --dx: 0vw;    --dy: 120vh; }
+.triangle { right: 0;     background: #38bdf8; --delay: 0.4s; --dx: 120vw;  --dy: 0vh; }
+
+.circle::before   { border-radius: 50%; }
+.triangle::before { clip-path: polygon(50% 0, 0 100%, 100% 100%); }
 
 @keyframes logo-in {
 	from { opacity: 0; transform: scale(0); }
@@ -60,12 +54,12 @@
 	to { opacity: 0; transform: scale(0); }
 }
 @keyframes shape-in {
-	from { opacity: 0; transform: scale(0) rotate(0deg); }
-	to   { opacity: 1; transform: scale(1) rotate(var(--rot)); }
+	from { opacity: 0; transform: scale(0); }
+	to   { opacity: 1; transform: scale(1); }
 }
 @keyframes shape-out {
-	from { opacity: 1; transform: scale(1) rotate(var(--rot)); }
-	to   { opacity: 0; transform: translate(var(--dx), var(--dy)) rotate(var(--rot)); }
+	from { opacity: 1; transform: translate(0, 0); }
+	to   { opacity: 0; transform: translate(var(--dx), var(--dy)); }
 }
 @keyframes fade-out {
 	to { opacity: 0; visibility: hidden; }
