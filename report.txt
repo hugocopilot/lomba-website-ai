@@ -32,12 +32,12 @@ home.html
 
 index.html
   [--] Navigation menu (<nav>)
-  [--] Hero/header (<h1>)
+  [OK] Hero/header (<h1>)
   [--] Footer (<footer>)
   [--] CTA (Call-to-Action)
   [OK] Image (<img>)
   [OK] Responsive (meta name=viewport)
-  [OK] Clear structure (h2 / section)
+  [--] Clear structure (h2 / section)
   [--] Working nav links
 
-Done in 0.10765800 ms
+Done in 0.11458200 ms
