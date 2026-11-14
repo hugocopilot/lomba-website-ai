@@ -9,7 +9,7 @@
 }
 
 .splash-logo {
-	animation: fade-in 1s ease both;
+	animation: cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes fade-in {
