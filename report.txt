@@ -37,7 +37,7 @@ index.html
   [--] CTA (Call-to-Action)
   [OK] Image (<img>)
   [OK] Responsive (meta name=viewport)
-  [--] Clear structure (h2 / section)
+  [OK] Clear structure (h2 / section)
   [--] Working nav links
 
-Done in 0.11312400 ms
+Done in 0.10765800 ms
