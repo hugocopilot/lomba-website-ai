@@ -28,8 +28,13 @@
 	--delay: 0.2s; --dx: 120vw; --dy: 0vh;
 }
 .triangle {
-	width: 100vmax; height: 90vmax; left: -10vmax; bottom: -35vmax;
-	clip-path: polygon(50% 0, 0 100%, 100% 100%); background: #38bdf8;
+	width: 140vmax;
+	height: 120vmax;
+	left: 50%;
+	margin-left: -70vmax;
+	bottom: -30vmax;
+	clip-path: polygon(50% 0, 0 100%, 100% 100%);
+	background: #38bdf8;
 	--delay: 0.4s; --dx: 0vw; --dy: 120vh;
 }
 
