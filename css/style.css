@@ -9,3 +9,7 @@
 .splash-logo {
 	animation: fade-in 1s ease both;
 }
+
+@keyframes fade-in {
+	from {opacity: 0;}
+}
