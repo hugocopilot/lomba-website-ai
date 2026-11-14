@@ -1,5 +1,5 @@
 .splash {
-	--s: 120vmax;
+	--s: 150vmax;
 	position: fixed;
 	inset: 0;
 	display: grid;
