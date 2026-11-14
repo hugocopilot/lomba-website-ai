@@ -1,6 +1,13 @@
 .splash { overflow: hidden; }
 .splash-bg { position: absolute ; inset: 0; }
-.splash-logo { position: relative; z-index: 1; }
+.splash-logo {
+	width: 140px;
+	position: relative;
+	z-index: 1;
+	animation:
+		logo-in 2s cubic-bezier(0.22, 1, 0.36, 1) both,
+		logo-out 0.6s ease-in 2s forwards;
+}
 
 .shape {
 	position: absolute;
