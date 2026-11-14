@@ -31,13 +31,13 @@ home.html
   [--] Working nav links
 
 index.html
-  [OK] Navigation menu (<nav>)
+  [--] Navigation menu (<nav>)
   [--] Hero/header (<h1>)
-  [OK] Footer (<footer>)
+  [--] Footer (<footer>)
   [--] CTA (Call-to-Action)
   [OK] Image (<img>)
   [OK] Responsive (meta name=viewport)
   [--] Clear structure (h2 / section)
-  [OK] Working nav links
+  [--] Working nav links
 
-Done in 0.12527600 ms
+Done in 0.11294400 ms
