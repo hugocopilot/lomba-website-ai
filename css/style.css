@@ -47,6 +47,13 @@
 	--delay: 0.4s; --dx: 0vw; --dy: 120vh;
 }
 
+@keyframes logo-in {
+	from { opacity: 0; transform: scale(0); }
+	to   { opacity: 1; transform: scale(1); }
+}
+@keyframes logo-out {
+	to { opacity: 0; transform: scale(0); }
+}
 @keyframes shape-in {
 	from { opacity: 0; transform: scale(0) rotate(0deg); }
 	to   { opacity: 0.85; transform: scale(1) rotate(var(--rot)); }
@@ -54,4 +61,7 @@
 @keyframes shape-out {
 	from { opacity: 0.85; transform: scale(1) rotate(var(--rot)); }
 	to   { opacity: 0; transform: translate(var(--dx), var(--dy)) rotate(var(--rot)); }
+}
+@keyframes fade-out {
+	to { opacity: 0; visibility: hidden; }
 }
