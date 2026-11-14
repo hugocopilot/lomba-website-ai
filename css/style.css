@@ -1,4 +1,13 @@
-.splash { overflow: hidden; animation: fade-out 0.5s ease 2.6s forwards; }
+.splash {
+	position: fixed;
+	inset: 0;
+	display: grid;
+	place-items: center;
+	overflow: hidden;
+	background: #ecfdf5;
+	z-index: 9999;
+	animation: fade-out 0.5s ease 2.6s forwards;
+}
 
 .shape {
 	position: absolute;
