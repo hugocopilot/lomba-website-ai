@@ -40,4 +40,4 @@ index.html
   [--] Clear structure (h2 / section)
   [OK] Working nav links
 
-Done in 0.13328699 ms
+Done in 0.10671400 ms
