@@ -81,7 +81,7 @@ def build_report(folder, ignore):
 
 def save_report(report, out):
     clean = ANSI.sub("", report)
-    out.write_text()
+    out.write_text(clean + '\n' + )
 
 def main():
     args = parse_args()
