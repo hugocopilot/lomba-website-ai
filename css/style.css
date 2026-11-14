@@ -25,5 +25,5 @@
 
 @keyframes shape-out {
 	from { opacity: 0.8; transform: scale(1) rotate(var(--rot)); }
-	to { opacity: 0; transform: translate((var(--dx), var(--dy)) scale(1) rotate(calc(var(--rot) + 180deg)));}
+	to { opacity: 0; transform: translate(var(--dx), var(--dy) scale(1) rotate(calc(var(--rot) + 180deg)));}
 }
