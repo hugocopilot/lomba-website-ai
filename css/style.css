@@ -1,5 +1,5 @@
 .splash {
-	--s: 120vmax; /* one number controls all three shapes */
+	--s: 180vmax;
 	position: fixed;
 	inset: 0;
 	display: grid;
