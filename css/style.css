@@ -10,7 +10,7 @@
 }
 
 .splash-logo {
-	width: clamp(280px, 22vmin, 360px);
+	width: clamp(240px, 22vmin, 360px);
 	position: relative;
 	z-index: 1;
 	animation:
