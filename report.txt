@@ -1,0 +1,43 @@
+Checking 4 file(s) in /home/hugo/Documents/lomba-website-ai
+
+about.html
+  [--] Navigation menu (<nav>)
+  [--] Hero/header (<h1>)
+  [--] Footer (<footer>)
+  [--] CTA (Call-to-Action)
+  [--] Image (<img>)
+  [--] Responsive (meta name=viewport)
+  [--] Clear structure (h2 / section)
+  [--] Working nav links
+
+contact.html
+  [--] Navigation menu (<nav>)
+  [--] Hero/header (<h1>)
+  [--] Footer (<footer>)
+  [--] CTA (Call-to-Action)
+  [--] Image (<img>)
+  [--] Responsive (meta name=viewport)
+  [--] Clear structure (h2 / section)
+  [--] Working nav links
+
+home.html
+  [--] Navigation menu (<nav>)
+  [--] Hero/header (<h1>)
+  [--] Footer (<footer>)
+  [--] CTA (Call-to-Action)
+  [--] Image (<img>)
+  [--] Responsive (meta name=viewport)
+  [--] Clear structure (h2 / section)
+  [--] Working nav links
+
+index.html
+  [OK] Navigation menu (<nav>)
+  [--] Hero/header (<h1>)
+  [OK] Footer (<footer>)
+  [--] CTA (Call-to-Action)
+  [OK] Image (<img>)
+  [OK] Responsive (meta name=viewport)
+  [--] Clear structure (h2 / section)
+  [OK] Working nav links
+
+Done in 0.11852801 ms
