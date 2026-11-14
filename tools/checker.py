@@ -11,6 +11,8 @@ GREEN = "\033[0;32m"
 BLUE = "\033[0;34m"
 RESET = "\033[0m"
 
+ANSI = re.compile(r"\033\[[0-9;]*[A-Za-z]")
+
 DEFAULT_IGNORE = {"tools", "node_modules", ".venv", ".git", "pendidikan-for-later"}
 LOGO = rf"""{RED}
    ________  __    _    __     ___      ____________
@@ -76,6 +78,9 @@ def build_report(folder, ignore):
 
     lines.append(f"\nDone in {ms:.8f} ms")
     return "\n".join(lines)
+
+def save_report(report, out):
+    clean = 
 
 def main():
     args = parse_args()
