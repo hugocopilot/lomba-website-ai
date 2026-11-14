@@ -80,7 +80,7 @@ def build_report(folder, ignore):
     return "\n".join(lines)
 
 def save_report(report, out):
-    clean = 
+    clean = ANSI.sub()
 
 def main():
     args = parse_args()
