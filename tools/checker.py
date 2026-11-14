@@ -23,9 +23,9 @@ LOGO = rf"""{RED}
 def parse_args():
     p = argparse.ArgumentParser(description="Checker V1 For Competition")
     p.add_argument("folder", nargs="?", help="ts (Default : root project)")
-    p.add_argument("--ignore", action="append", default=[], metavar="FOLDER",
-                   help="ignore folder")
+    p.add_argument("--ignore", action="append", default=[], metavar="FOLDER", help="ignore folder")
     p.add_argument("--live", action="store_true", help="every 1000ms check")
+    p.add_argument("--out", metavar="FILE", help="save report to this file")
     return p.parse_args()
 
 def has_tag(html, tag):
