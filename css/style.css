@@ -68,7 +68,7 @@
 }
 
 .choice {
-	animation: fade-in;
+	animation: fade-in 0.8s ease var(--start, 3s) both;
 }
 
 @keyframes word-in {
