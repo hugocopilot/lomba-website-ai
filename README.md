@@ -4,8 +4,8 @@
 ╚═══════════════════════════════════════╝
 
 ╔═══════════════════════════════════════╗
-║ Theme: School Profile
-║ Tema: Profil Sekolah
+║ Theme: School Profile                 ║
+║ Tema: Profil Sekolah                  ║
 ╚═══════════════════════════════════════╝
 
 Current
