@@ -57,7 +57,8 @@
 	min-height: 100dvh;
 	display: grid;
 	place-content: center;
-	
+	text-align: center;
+	gap: 0.5em;
 }
 
 @keyframes word-in {
