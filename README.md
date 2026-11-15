@@ -9,6 +9,6 @@
 ╚═══════════════════════════════════════╝
 
 ╔═══════════════════════════════════════╗
-║ The: School Profile                 ║
+║ The AI used: School Profile                 ║
 ║ AI yang digunakan: Profil Sekolah                  ║
 ╚═══════════════════════════════════════╝
