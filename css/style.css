@@ -61,7 +61,7 @@
 
 .line {
 	grid-area: 1 / 1;
-	margin: 0;
+	margin: 0.2em 0;
 }
 
 @keyframes word-in {
