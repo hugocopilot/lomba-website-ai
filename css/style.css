@@ -54,7 +54,8 @@
 
 .hero {
 	min-height: 100vh;
-	min
+	min-height: 100dvh;
+	
 }
 
 @keyframes word-in {
