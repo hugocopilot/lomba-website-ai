@@ -65,7 +65,7 @@
 @keyframes word-in {
   from { opacity: 0; translate: 30px 0; }
 }
-@keyframes word-o {
+@keyframes word-out {
   from { opacity: 0; translate: 30px 0; }
 }
 @keyframes logo-in {
