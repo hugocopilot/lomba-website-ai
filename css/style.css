@@ -53,7 +53,7 @@
 }
 
 .anim-1 {
-	
+	place-items: center;
 }
 
 @keyframes word-in {
