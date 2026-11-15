@@ -1,4 +1,5 @@
-Using code Page 437 for table
+Using code page 437 for table.
+
 
 Tema: Profil Sekolah
 
