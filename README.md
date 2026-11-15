@@ -9,7 +9,7 @@
 ╚═══════════════════════════════════════╝
 
 ╔═══════════════════════════════════════╗
-║ The AI used: Claude (for code)        ║
+║ The AI used: Claude ( For code)        ║
 ║                                       ║
 ║ AI yang digunakan: Claude (Untuk kode)            ║
 ╚═══════════════════════════════════════╝
