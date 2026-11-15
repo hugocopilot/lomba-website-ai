@@ -92,6 +92,9 @@
 	from { opacity: 1; transform: translate(0, 0); }
 	to   { opacity: 0; transform: translate(var(--dx), var(--dy)); }
 }
+@keyframes fade-in {
+	to { opacity: 0; visibility: hidden; }
+}
 @keyframes fade-out {
 	to { opacity: 0; visibility: hidden; }
 }
