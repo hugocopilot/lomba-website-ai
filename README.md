@@ -1,6 +1,6 @@
 ╔═══════════════════════════════════════╗
-║ Using code page 437 for table.
-║ Mengunakan code page 437 untuk table.
+║ Using code page 437 for table.        ║
+║ Mengunakan code page 437 untuk table. ║
 ╚═══════════════════════════════════════╝
 
 Tema: Profil Sekolah
