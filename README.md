@@ -10,5 +10,5 @@
 
 ╔═══════════════════════════════════════╗
 ║ The AI used: Claude ()                ║
-║ AI yang digunakan: Profil Sekolah                  ║
+║ AI yang digunakan: Claude             ║
 ╚═══════════════════════════════════════╝
