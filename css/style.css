@@ -52,7 +52,9 @@
              calc(3s + var(--i) * 0.12s) both;
 }
 
-.anim
+.anim-1 {
+	
+}
 
 @keyframes word-in {
   from { opacity: 0; translate: 30px 0; }
