@@ -78,6 +78,34 @@
 	opacity: 0.8;
 }
 
+.choice { max-width: 22rem; margin-inline: auto; }
+
+.choice button {
+  display: block;
+  width: 100%;
+  margin-top: 0.8em;
+  padding: 0.9em 1.4em;
+  border: 2px solid #16a34a;
+  border-radius: 14px;
+  background: #fff;
+  color: #14532d;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease,
+              color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.choice button:hover,
+.choice button:focus-visible {
+  background: #16a34a;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(22, 163, 74, 0.3);
+}
+
+.choice button:active { transform: scale(0.98); }
+
 @keyframes word-in {
   from { opacity: 0; translate: 30px 0; }
 }
