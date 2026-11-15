@@ -3,7 +3,7 @@
 ║ Mengunakan code page 437 untuk table. ║
 ╚═══════════════════════════════════════╝
 
-Tema: Profil Sekolah
+Theme: Profil Sekolah
 Tema: Profil Sekolah
 
 Current
