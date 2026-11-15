@@ -68,7 +68,7 @@
 }
 
 .choice {
-	
+	animation: fade-in;
 }
 
 @keyframes word-in {
