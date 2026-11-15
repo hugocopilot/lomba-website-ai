@@ -10,5 +10,5 @@
 
 ╔═══════════════════════════════════════╗
 ║ Current AI that have been use: School Profile                 ║
-║ Tema: Profil Sekolah                  ║
+║ AI yang sedang: Profil Sekolah                  ║
 ╚═══════════════════════════════════════╝
