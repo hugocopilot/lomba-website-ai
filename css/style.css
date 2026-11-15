@@ -67,6 +67,10 @@
 	margin: 0.2em 0;
 }
 
+.choice {
+	
+}
+
 @keyframes word-in {
   from { opacity: 0; translate: 30px 0; }
 }
