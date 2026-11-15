@@ -52,8 +52,8 @@
              calc(3s + var(--i) * 0.12s) both;
 }
 
-.anim-1 {
-	place-items: center;
+.hero {
+	min-height: ;
 }
 
 @keyframes word-in {
