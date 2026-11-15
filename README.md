@@ -10,6 +10,6 @@
 
 ╔═══════════════════════════════════════╗
 ║ The AI used: Claude (for code)        ║
-║
-║ AI yang digunakan: Claude             ║
+║                                       ║
+║ AI yang digunakan: Claude (Untuk kode)            ║
 ╚═══════════════════════════════════════╝
