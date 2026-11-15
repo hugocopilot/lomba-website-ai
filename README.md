@@ -5,4 +5,4 @@
 
 Tema: Profil Sekolah
 
-Current ═
+Current
