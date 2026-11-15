@@ -8,4 +8,4 @@
 ║ Tema: Profil Sekolah                  ║
 ╚═══════════════════════════════════════╝
 
-Current AI 
+Current AI
