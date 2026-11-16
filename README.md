@@ -4,8 +4,6 @@ Website profil Al-Irsyad Al-Islamiyyah Bandung, dibuat untuk lomba desain web.
 
 Live demo: https://lomba-website-ai.vercel.app
 
-![Screenshot](assets/screenshot.png)
-
 ## Fitur
 
 - Splash animation (logo dan tiga panel) dengan CSS murni
