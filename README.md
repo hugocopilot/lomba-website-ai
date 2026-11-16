@@ -38,8 +38,8 @@ python tools/check.py --live
 
 ## Teknologi
 
-HTML, CSS, JavaScript, Python (untuk checker), Vercel (hosting)
+HTML, CSS, JavaScript, Python, Vercel (hosting)
 
 ## Pembuat
 
-Alfaz dan Gabriel, Al-Irsyad Al-Islamiyyah Bandung
+Alfaz dan Gabriel
