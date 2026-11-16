@@ -38,7 +38,7 @@ python tools/check.py --live
 
 ## Teknologi
 
-HTML, CSS, JavaScript, Python, Vercel (hosting)
+HTML, CSS, JavaScript, Python, Vercel
 
 ## Pembuat
 
