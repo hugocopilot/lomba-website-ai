@@ -26,7 +26,7 @@ Tidak perlu install apa pun.
 assets/   gambar dan logo
 css/      style.css
 js/       words.js, mode.js
-tools/    check.py (pengecek syarat lomba)
+tools/    check.py
 index.html, home.html, about.html, contact.html
 ```
 
