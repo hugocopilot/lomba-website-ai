@@ -14,8 +14,6 @@ Live demo: https://lomba-website-ai.vercel.app
 
 ## Menjalankan secara lokal
 
-Tidak perlu install apa pun.
-
 1. Clone repo: `git clone https://github.com/USERNAME/lomba-website-ai.git`
 2. Buka folder di VS Code
 3. Jalankan dengan Live Server, atau buka `index.html` di browser
