@@ -42,4 +42,4 @@ HTML, CSS, JavaScript, Python (untuk checker), Vercel (hosting)
 
 ## Pembuat
 
-[Nama kamu], Al-Irsyad Al-Islamiyyah Bandung
+Alfaz , Al-Irsyad Al-Islamiyyah Bandung
