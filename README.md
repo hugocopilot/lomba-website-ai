@@ -33,7 +33,7 @@ index.html, home.html, about.html, contact.html
 ## Pengecek syarat
 
 ```
-python tools/check.py --live
+python tools/check.py --live --out
 ```
 
 ## Teknologi
