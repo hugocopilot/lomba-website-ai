@@ -84,19 +84,19 @@ body { background-color: #ecfdf5; }
 .choice { max-width: 22rem; margin-inline: auto; }
 
 .choice button {
-  display: block;
-  width: 100%;
-  margin-top: 0.8em;
-  padding: 0.9em 1.4em;
-  border: 2px solid #16a34a;
-  border-radius: 14px;
-  background: #fff;
-  color: #14532d;
-  font: inherit;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease,
-              color 0.2s ease, box-shadow 0.2s ease;
+	display: block;
+	width: 100%;
+	margin-top: 0.8em;
+	padding: 0.9em 1.4em;
+	border: 2px solid #16a34a;
+	border-radius: 14px;
+	background: #fff;
+	color: #14532d;
+	font: inherit;
+	font-weight: 700;
+	cursor: pointer;
+	transition: transform 0.2s ease, background 0.2s ease,
+				color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .choice button:hover,
