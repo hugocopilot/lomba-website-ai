@@ -6,14 +6,14 @@ function applyMode(mode) {
 }
 
 function saveMode(mode) {
-  try { localStorage.setItem("mode", mode); } catch (e) {}
+    try { localStorage.setItem("mode", mode); } catch (e) {}
 }
 
 function leave() {
-  choice.classList.add("leave");
-  choice.addEventListener("animationend", (e) => {
-    if (e.target === choice) choice.hidden = true;
-  });
+    choice.classList.add("leave");
+    choice.addEventListener("animationend", (e) => {
+        if (e.target === choice) choice.hidden = true;
+    });
 }
 
 document.querySelectorAll("[data-set-mode]").forEach((btn) => {
