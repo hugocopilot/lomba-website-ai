@@ -5,15 +5,23 @@ function saveMode(mode) {
     try { localStorage.setItem("mode", mode); } catch (e) {}
 }
 
+function leave() {
+    if (typeof go === "function") {
+        go(NEXT, true);
+    } else {
+        location.replace(NEXT);
+    }
+}
+
 function choose(mode) {
     root.dataset.mode = mode;
     saveMode(mode);
-    go(NEXT, true);
+    leave();
 }
 
 function init() {
     if (root.dataset.returning) {
-        setTimeout(() => go(NEXT, true), 3200);
+        setTimeout(leave, 3200);
         return;
     }
     document.querySelectorAll("[data-set-mode]").forEach((btn) => {
