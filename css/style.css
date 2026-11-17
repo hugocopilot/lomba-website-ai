@@ -105,7 +105,7 @@ body { background-color: #ecfdf5; }
 	border-color: #000000;
 	color: #422006;
 	transform: translateY(-3px);
-	box-shadow: 10px 10px ;
+	box-shadow: 10px 10px #;
 }
 
 .choice button:active { transform: scale(0.98); }
