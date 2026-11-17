@@ -2,9 +2,19 @@
 <html lang="id">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Lomba Design Web AI</title>
+        <script>
+            try {
+                var saved = localStorage.getItem("mode");
+                if (saved) {
+                    document.documentElement.dataset.mode = saved;
+                    document.documentElement.dataset.returning = "1";
+                }
+            } catch (e) {}
+        </script>
         <link rel="stylesheet" href="css/style.css" />
+        <script src="js/transition.js" defer></script>
         <script src="js/words.js" defer></script>
         <script src="js/mode.js" defer></script>
     </head>
@@ -17,11 +27,11 @@
         </div>
         <section class="hero">
             <div class="group">
-                <h1 class="line" lang="ar" dir="rtl" data-words style="--start: 3s">السلام عليكم ورحمة الله وبركاته</h1>
+                <p class="line" lang="ar" dir="rtl" data-words style="--start: 3s">السلام عليكم ورحمة الله وبركاته</p>
             </div>
             <div class="group">
                 <h1 class="line" data-words style="--start: 6.7s">Selamat Datang</h1>
-                <h1 class="line" data-words style="--start: 6.9s">Di Website Al-Irsyad</h1>
+                <p class="line" data-words style="--start: 6.9s">Di Website Al-Irsyad</p>
             </div>
             <div class="group choice" style="--start: 9.8s">
                 <p>Bagaimana Anda ingin menjelajahi situs ini?</p>
