@@ -2,7 +2,7 @@ const root = document.documentElement;
 const choice = document.querySelector(".choice");
 
 function applyMode(mode) {
-  root.dataset.mode = mode;
+    root.dataset.mode = mode;
 }
 
 function saveMode(mode) {
