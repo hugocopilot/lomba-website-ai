@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="css/style.css" />
         <script src="js/words.js" defer></script>
         <script src="js/mode.js" defer></script>
+        <script>
+    try { document.documentElement.dataset.mode = localStorage.getItem("mode") || "interactive"; } catch (e) {}
+</script>
     </head>
     <body>
         <div class="splash">
