@@ -101,7 +101,7 @@ body { background-color: #ecfdf5; }
 
 .choice button:hover,
 .choice button:focus-visible {
-	background: #16a34a;
+	background: #facc15;
 	color: #fff;
 	transform: translateY(-4px);
 }
