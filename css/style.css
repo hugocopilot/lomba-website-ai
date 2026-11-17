@@ -103,7 +103,7 @@ body { background-color: #ecfdf5; }
 .choice button:focus-visible {
 	background: #16a34a;
 	color: #fff;
-	transform: translateY(-12px);
+	transform: translateY(-4px);
 }
 
 .choice button:active { transform: scale(0.98); }
