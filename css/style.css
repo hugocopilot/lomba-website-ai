@@ -101,9 +101,11 @@ body { background-color: #ecfdf5; }
 
 .choice button:hover,
 .choice button:focus-visible {
-	background: #facc15;
-	color: #fff;
-	transform: translateY(-4px);
+  background: #facc15;
+  border-color: #facc15;
+  color: #422006;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(250, 204, 21, 0.45);
 }
 
 .choice button:active { transform: scale(0.98); }
