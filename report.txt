@@ -1,4 +1,14 @@
-Checking 4 file(s) in /home/hugo/Documents/lomba-website-ai
+Checking 5 file(s) in /home/hugo/Documents/lomba-website-ai
+
+abandoned/index.html
+  [--] Navigation menu (<nav>)
+  [OK] Hero/header (<h1>)
+  [--] Footer (<footer>)
+  [OK] CTA (Call-to-Action)
+  [OK] Image (<img>)
+  [OK] Responsive (meta name=viewport)
+  [--] Clear structure (h2 / section)
+  [--] Working nav links
 
 about.html
   [--] Navigation menu (<nav>)
@@ -34,10 +44,10 @@ index.html
   [--] Navigation menu (<nav>)
   [OK] Hero/header (<h1>)
   [--] Footer (<footer>)
-  [--] CTA (Call-to-Action)
+  [OK] CTA (Call-to-Action)
   [OK] Image (<img>)
   [OK] Responsive (meta name=viewport)
-  [--] Clear structure (h2 / section)
+  [OK] Clear structure (h2 / section)
   [--] Working nav links
 
-Done in 0.11444800 ms
+Done in 0.13830700 ms
