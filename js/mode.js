@@ -17,15 +17,15 @@ function leave() {
 }
 
 document.querySelectorAll("[data-set-mode]").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const mode = btn.dataset.setMode;
-    applyMode(mode);
-    saveMode(mode);
-    leave();
-  });
+    btn.addEventListener("click", () => {
+        const mode = btn.dataset.setMode;
+        applyMode(mode);
+        saveMode(mode);
+        leave();
+    });
 });
 
 try {
-  const saved = localStorage.getItem("mode");
-  if (saved) { applyMode(saved); choice.hidden = true; }
+    const saved = localStorage.getItem("mode");
+    if (saved) { applyMode(saved); choice.hidden = true; }
 } catch (e) {}
