@@ -1,5 +1,5 @@
 body {
-	
+
 }
 
 .splash {
@@ -140,3 +140,4 @@ body {
 @keyframes fade-out {
 	to { opacity: 0; visibility: hidden; }
 }
+
