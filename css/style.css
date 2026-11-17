@@ -102,7 +102,7 @@ body { background-color: #ecfdf5; }
 .choice button:hover,
 .choice button:focus-visible {
   background: #facc15;
-  border-color: #facc15;
+  border-color: #000000;
   color: #422006;
   transform: translateY(-3px);
 }
