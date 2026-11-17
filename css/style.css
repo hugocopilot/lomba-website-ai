@@ -1,6 +1,4 @@
-body {
-
-}
+html { font-size: clamp(16px, 1.1vw, 26px); }
 
 .splash {
 	position: fixed;
