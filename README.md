@@ -21,11 +21,28 @@ Live demo: https://lomba-website-ai.vercel.app
 ## Struktur folder
 
 ```
-assets/   gambar dan logo
-css/      style.css
-js/       words.js, mode.js
-tools/    check.py
-index.html, home.html, about.html, contact.html
+.
+├── about.html
+├── assets
+│   └── al-irsyad-logo.png
+├── contact.html
+├── css
+│   └── style.css
+├── home.html
+├── index.html
+├── js
+│   ├── mode.js
+│   ├── transitions.js
+│   └── words.js
+├── LICENSE
+├── README.md
+├── report.txt
+├── tools
+│   ├── checker.py
+│   └── cp437
+└── vercel.json
+
+5 directories, 15 files
 ```
 
 ## Pengecek syarat
