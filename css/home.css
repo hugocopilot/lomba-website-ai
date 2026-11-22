@@ -22,7 +22,7 @@ main,
 }
 .header-box::hover,
 .header-box::focus-visible {
-    color: black;
+    
 }
 
 .footer-box {
