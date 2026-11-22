@@ -7,5 +7,10 @@ body {
 
 main,
 .hero {
+    flex: 1;
+}
+
+.footer-box {
+    margin-top: auto;
     
 }
