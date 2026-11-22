@@ -19,10 +19,15 @@ a {
 }
 
 .header-box {
-    padding: 1.2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1.5rem;
     background: linear-gradient(to right, #16a34a, #facc15, #38bdf8);
-    color: #ffffff;
-    text-align: center;
+    color: #0f172a;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .header-box a:hover,
