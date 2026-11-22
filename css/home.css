@@ -13,7 +13,7 @@ main,
 .footer-box {
     margin-top: auto;
     padding: 1.2rem 1.5rem;
-    background: #349e9a;
+    background: linear#349e9a;
     color: #ffffff;
     text-align: center;
 }
