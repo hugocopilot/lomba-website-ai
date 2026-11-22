@@ -21,7 +21,7 @@ main,
     text-align: center;
 }
 .header-box::hover,
-.header-box::active-focus
+.header-box::focus-visible
 
 .footer-box {
     margin-top: auto;
