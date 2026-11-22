@@ -19,6 +19,7 @@ main,
     color: #ffffff;
     text-align: center;
 }
+
 .header-box a:hover,
 .header-box a:focus-visible {
     font-size: calc(1rem + 4px);
