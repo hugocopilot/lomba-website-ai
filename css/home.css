@@ -5,4 +5,7 @@ body {
     flex-direction: column;
 }
 
-main {}
+main,
+.hero {
+    
+}
