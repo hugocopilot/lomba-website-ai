@@ -20,7 +20,7 @@ a {
 
 .header-box {
     padding: 1.2rem 1.5rem;
-    background: linear-gradient(0deg, #349e9a, #61ceca);
+    background: linear-gradient(to right, #16a34a, #facc15, #38bdf8);
     color: #ffffff;
     text-align: center;
 }
