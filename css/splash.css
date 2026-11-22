@@ -145,4 +145,3 @@ body.page-out { animation: page-out 0.4s ease forwards; }
 @keyframes fade-out {
 	to { opacity: 0; visibility: hidden; }
 }
-
