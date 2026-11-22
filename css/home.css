@@ -28,6 +28,8 @@ a {
 .header-box a:hover,
 .header-box a:focus-visible {
     font-size: calc(1rem + 4px);
+	background: #facc15;
+	border-color: #000000;
     color: #422006;
     box-shadow: 2px 2px #422006;;
 }
