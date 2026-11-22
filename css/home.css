@@ -29,7 +29,7 @@ a {
 .header-box a:focus-visible {
     font-size: calc(1rem + 4px);
     color: #422006;
-    text-shadow: 2px 2px #422006;;
+    box-shadow: 2px 2px #422006;;
 }
 
 .footer-box {
