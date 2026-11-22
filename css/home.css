@@ -8,15 +8,8 @@ body {
     animation: page-in 0.4s ease both;
 }
 
-main,
-.hero {
-    flex: 1;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
+main, .hero { flex: 1; }
+a { color: inherit; text-decoration: none; }
 
 .header-box {
     display: flex;
@@ -36,21 +29,11 @@ a {
     z-index: 100;
 }
 
-.header-box img {
-    display: block;
-    height: 2rem;
-    flex-shrink: 0;
-}
-
+.header-box img { display: block; height: 2rem; flex-shrink: 0; }
 .header-box {
     --shadow: 4px 4px #249e9a;
 }
-
-.header-box nav {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 0.4rem;
-}
+.header-box nav { display: flex; flex-wrap: nowrap; gap: 0.4rem;}
 
 .header-box a {
     padding: 0.5rem 1rem;
