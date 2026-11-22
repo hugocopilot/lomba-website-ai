@@ -1,13 +1,15 @@
-html,
+html {
+    overflow-x: clip;
+}
+
 body {
     margin: 0;
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
     font-family: "JetBrains Mono", monospace;
-    background-color: #ecfdf5 linear-gradient(180deg, #61ceca, #ecfdf5 80%);
+    background: #ecfdf5 linear-gradient(180deg, #61ceca, #ecfdf5 95%);
     animation: page-in 0.4s ease both;
-    overflow-x: clip;
 }
 
 main, .hero { flex: 1; }
@@ -99,6 +101,8 @@ svg.doodle {
     stroke-linecap: round;
     stroke-linejoin: round;
 }
+
+@keyframes page-in { from { opacity: 0; } }
 
 @keyframes drift {
     0%   { translate: 0 0; }
