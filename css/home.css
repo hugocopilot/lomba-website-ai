@@ -107,7 +107,99 @@ svg.doodle {
     stroke-linejoin: round;
 }
 
+.hero-bg { display: grid; align-items: center; }
 
+.content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    justify-items: center;
+    gap: 1.2rem;
+    width: min(100%, 44rem);
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+    text-align: center;
+    color: #0f172a;
+}
+
+.content h1 { margin: 0; font-size: clamp(1.8rem, 5vw, 3.2rem); line-height: 1.15; }
+.content p { margin: 0; }
+.lead { max-width: 36rem; line-height: 1.7; }
+.tag { font-size: 0.85rem; opacity: 0.7; }
+
+.badge {
+    padding: 0.4rem 1rem;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    box-shadow: 3px 3px #249e9a;
+}
+
+.cta {
+    padding: 0.9rem 1.8rem;
+    background: #facc15;
+    color: #422006;
+    border: 2px solid #000;
+    border-radius: 14px;
+    font-weight: 700;
+    box-shadow: 4px 4px #422006;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cta:hover,
+.cta:focus-visible { transform: translate(-2px, -2px); box-shadow: 6px 6px #422006; }
+.cta:active { transform: translate(2px, 2px); box-shadow: 2px 2px #422006; }
+
+.concepts { padding: 6rem 1rem; overflow: clip; }
+.concepts h2 { text-align: center; margin: 0 0 6rem; }
+
+.orbit {
+    --t: 15s;
+    position: relative;
+    width: min(70vw, 30rem);
+    aspect-ratio: 1;
+    margin: 0 auto;
+    border: 2px dashed rgba(52, 158, 154, 0.5);
+    border-radius: 50%;
+    animation: spin var(--t) linear infinite;
+}
+
+.arm {
+    position: absolute;
+    inset: 0;
+    rotate: calc(var(--i) * var(--step));
+    pointer-events: none;
+}
+
+.arm article {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    translate: -50% -50%;
+    transform: rotate(calc(var(--i) * var(--step) * -1));
+    animation: spin var(--t) linear infinite reverse;
+    pointer-events: auto;
+    box-sizing: border-box;
+    width: 12rem;
+    padding: 1rem;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 14px;
+    box-shadow: 4px 4px #249e9a;
+    transition: box-shadow 0.2s;
+}
+.arm article:hover { box-shadow: 8px 8px #249e9a; }
+.arm h3 { margin: 0 0 0.4rem; font-size: 1rem; }
+.arm p { margin: 0; font-size: 0.8rem; }
+
+@keyframes spin { to { rotate: 360deg; } }
+
+@media (max-width: 700px), (prefers-reduced-motion: reduce) {
+    .orbit { width: auto; aspect-ratio: auto; display: grid; gap: 1rem; border: 0; animation: none; }
+    .arm { position: static; rotate: none; }
+    .arm article { position: static; translate: none; transform: none; width: auto; animation: none; }
+}
 
 @keyframes page-in { from { opacity: 0; } }
 
