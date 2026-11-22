@@ -17,6 +17,8 @@ main,
     margin-top: auto;
     padding: 1.2rem 1.5rem;
     background: linear-gradient(0deg, #349e9a, #61ceca);
+    color: #ffffff;
+    text-align: center;
 }
 
 .footer-box {
