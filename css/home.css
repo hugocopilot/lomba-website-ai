@@ -13,7 +13,7 @@ main,
 .footer-box {
     margin-top: auto;
     padding: 1.2rem 1.5rem;
-    background: linear#349e9a;
+    background: linear-gradient(135deg, #349e9a, #9bcfcd);
     color: #ffffff;
     text-align: center;
 }
