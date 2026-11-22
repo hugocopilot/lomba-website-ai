@@ -20,8 +20,8 @@ main,
     color: #ffffff;
     text-align: center;
 }
-.header-box::hover,
-.header-box::focus-visible {
+.header-box:hover,
+.header-box:focus-visible {
     font-size: calc(1rem + 4px);
 }
 
