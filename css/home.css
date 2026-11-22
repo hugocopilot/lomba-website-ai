@@ -111,27 +111,31 @@ svg.doodle {
 .concepts h2 { text-align: center; margin: 0 0 6rem; }
 
 .orbit {
+    --t: 30s;
     position: relative;
     width: min(70vw, 30rem);
     aspect-ratio: 1;
     margin: 0 auto;
-    animation: spin 30s linear infinite;
-}
-.orbit::before {
-    content: "";
-    position: absolute;
-    inset: 0;
     border: 2px dashed rgba(52, 158, 154, 0.5);
     border-radius: 50%;
+    animation: spin var(--t) linear infinite;
 }
 
-.arm { position: absolute; inset: 0; rotate: calc(var(--i) * 120deg); }
+.arm {
+    position: absolute;
+    inset: 0;
+    rotate: calc(var(--i) * var(--step));
+    pointer-events: none;
+}
 
 .arm article {
     position: absolute;
     top: 0;
     left: 50%;
     translate: -50% -50%;
+    transform: rotate(calc(var(--i) * var(--step) * -1));
+    animation: spin var(--t) linear infinite reverse;
+    pointer-events: auto;
     box-sizing: border-box;
     width: 12rem;
     padding: 1rem;
@@ -139,27 +143,18 @@ svg.doodle {
     border: 2px solid #000;
     border-radius: 14px;
     box-shadow: 4px 4px #249e9a;
-    transition: box-shadow 0.2s ease;
-    animation: unspin 30s linear infinite;
+    transition: box-shadow 0.2s;
 }
 .arm article:hover { box-shadow: 8px 8px #249e9a; }
 .arm h3 { margin: 0 0 0.4rem; font-size: 1rem; }
 .arm p { margin: 0; font-size: 0.8rem; }
 
-.orbit:has(article:hover),
-.orbit:has(article:hover) article { animation-play-state: paused; }
-
 @keyframes spin { to { rotate: 360deg; } }
-@keyframes unspin {
-    from { rotate: calc(var(--i) * -120deg); }
-    to   { rotate: calc(var(--i) * -120deg - 360deg); }
-}
 
 @media (max-width: 700px), (prefers-reduced-motion: reduce) {
-    .orbit { width: auto; aspect-ratio: auto; display: grid; gap: 1rem; animation: none; }
-    .orbit::before { display: none; }
+    .orbit { width: auto; aspect-ratio: auto; display: grid; gap: 1rem; border: 0; animation: none; }
     .arm { position: static; rotate: none; }
-    .arm article { position: static; translate: none; width: auto; animation: none; }
+    .arm article { position: static; translate: none; transform: none; width: auto; animation: none; }
 }
 
 @keyframes page-in { from { opacity: 0; } }
