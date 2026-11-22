@@ -28,6 +28,7 @@ a {
 .header-box a:hover,
 .header-box a:focus-visible {
     font-size: calc(1rem + 4px);
+    text-shadow: 8px 8px #422006;;
 }
 
 .footer-box {
