@@ -63,6 +63,7 @@ a { color: inherit; text-decoration: none; }
     position: absolute;
     inset: 0;
     pointer-events: none;
+    overflow: hidden;
 }
 
 .doodle {
@@ -106,6 +107,11 @@ svg.doodle {
 
 @media (prefers-reduced-motion: reduce) {
     .doodle { animation: none; }
+}
+
+@media (max-width: 600px) {
+    .doodle { font-size: calc(var(--s) * 0.6); }
+    svg.doodle { width: calc(var(--s) * 0.7); }
 }
 
 @media (max-width: 768px) {
