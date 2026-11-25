@@ -146,8 +146,8 @@
     text-align: center;
 }
 
-.edu p { max-width: 38rem; line-height: 1.7; }
-.edu-logo { width: clamp(5rem, 12vw, 7.5rem); height: auto; }
+.edu { width: min(96%, 80rem); }
+.edu-logo { width: clamp(8rem, 22vw, 16rem); }
 
 .phones {
     display: flex;
@@ -155,6 +155,7 @@
     justify-content: center;
     gap: clamp(0.5rem, 3vw, 2rem);
     width: 100%;
+    max-width: 24rem;
 }
 
 .phones img {
