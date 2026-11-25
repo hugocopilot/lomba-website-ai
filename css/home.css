@@ -155,18 +155,17 @@
     justify-content: center;
     gap: clamp(0.5rem, 3vw, 2rem);
     width: 100%;
-    max-width: 24rem;
 }
 
 .phones img {
     flex: 1 1 0;
     min-width: 0;
-    max-width: 16rem;
+    max-width: 24rem;
     height: auto;
     filter: drop-shadow(0 12px 18px rgba(15, 23, 42, 0.25));
     transition: transform 0.3s ease;
 }
-.phones img:nth-child(2) { max-width: 18rem; }
+.phones img:nth-child(2) { max-width: 28rem; }
 .phones img:hover { transform: translateY(-8px); }
 
 .play img { display: block; width: clamp(9rem, 20vw, 13rem); height: auto; transition: transform 0.2s ease; }
