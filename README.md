@@ -22,27 +22,38 @@ Live demo: https://lomba-website-ai.vercel.app
 
 ```
 .
-├── about.html
 ├── assets
-│   └── al-irsyad-logo.png
-├── contact.html
+│   ├── al-irsyad-logo.png
+│   ├── al-irysad-logolpp.png
+│   ├── itoshi_sae.jpeg
+│   ├── o1.png
+│   ├── o2.png
+│   └── o3.png
 ├── css
-│   └── style.css
-├── home.html
-├── index.html
+│   ├── about.css
+│   ├── contact.css
+│   ├── home.css
+│   ├── main.css
+│   └── splash.css
 ├── js
+│   ├── concepts.js
+│   ├── doodles.js
 │   ├── mode.js
 │   ├── transitions.js
 │   └── words.js
-├── LICENSE
-├── README.md
-├── report.txt
 ├── tools
 │   ├── checker.py
 │   └── cp437
+├── about.html
+├── contact.html
+├── home.html
+├── index.html
+├── LICENSE
+├── README.md
+├── report.txt
 └── vercel.json
 
-5 directories, 15 files
+5 directories, 26 files
 ```
 
 ## Pengecek syarat
