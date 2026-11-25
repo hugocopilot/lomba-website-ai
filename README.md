@@ -6,8 +6,8 @@ Live demo: https://lomba-website-ai.vercel.app
 
 ## Fitur
 
-- Splash animation (logo dan tiga panel) dengan CSS murni
-- Teks muncul per kata seperti subtitle
+- Splash animation
+- Teks animation
 - Pilihan tampilan: Interaktif atau Sederhana (tersimpan di localStorage)
 - Responsif untuk HP dan desktop
 - Navigasi, hero, CTA, dan footer
@@ -15,7 +15,7 @@ Live demo: https://lomba-website-ai.vercel.app
 ## Menjalankan secara lokal
 
 1. Clone repo: `git clone https://github.com/hugocopilot/lomba-website-ai.git`
-2. Buka folder di VS Code
+2. Buka folder di VS Code / Code Editor
 3. Jalankan dengan Live Server, atau buka `index.html` di browser
 
 ## Struktur folder
