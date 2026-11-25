@@ -58,7 +58,13 @@
 
 .info h2 { margin: 0; text-align: center; }
 
-.wa-list { display: grid; gap: 0.8rem; justify-items: center; }
+.wa-list {
+    display: grid;
+    gap: 0.8rem;
+    justify-items: center;
+    width: min(92%, 40rem);
+    margin: 2rem auto;
+}
 
 .wa-btn {
     display: inline-flex;
