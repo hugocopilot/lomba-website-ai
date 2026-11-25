@@ -48,3 +48,12 @@
     border-radius: 14px;
     box-shadow: 4px 4px #249e9a;
 }
+
+.info {
+    display: grid;
+    gap: 1.5rem;
+    width: min(92%, 40rem);
+    margin: 2.5rem auto;
+}
+
+.info h2 { margin: 0; text-align: center; }
