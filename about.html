@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width initial-scale=1" />
+        <title>Lomba Design Web AI</title>
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/home.css" />
+        <script src="js/doodles.js" defer></script>
+        <script src="js/concepts.js" defer></script>
+        <script>
+        try { document.documentElement.dataset.mode = localStorage.getItem("mode") || "interactive"; } catch (e) {}
+        </script>
+    </head>
+    <body>
+        <header class="header-box">
+            <img src="assets/al-irysad-logolpp.png" alt="Logo Al-Irsyad Al-Islamiyyah" height="40">
+            <nav>
+                <a href="home.html">Beranda</a>
+                <a href="about.html">Tentang</a>
+                <a href="contact.html">Kontak</a>
+            </nav>
+        </header>
+            <main class="hero-bg">
+            <div class="doodles" aria-hidden="true">
+                <span class="doodle" style="--x: 5%;  --y: 14%; --s: 3rem;   --d: 15s; --r: 4rem">1+1=2</span>
+                <span class="doodle" style="--x: 70%; --y: 8%;  --s: 2.5rem; --d: 18s; --r: 3rem">x² + y² = z²</span>
+                <span class="doodle" style="--x: 8%;  --y: 62%; --s: 2.5rem; --d: 17s; --r: 5rem">3x + 2 = 11</span>
+                <span class="doodle" style="--x: 55%; --y: 78%; --s: 3rem;   --d: 14s; --r: 3rem">&lt;/&gt;</span>
+                <span class="doodle" style="--x: 82%; --y: 55%; --s: 6rem;   --d: 19s; --r: 4rem">A</span>
+                <span class="doodle" style="--x: 30%; --y: 85%; --s: 5rem;   --d: 16s; --r: 3rem">B</span>
+                <span class="doodle" style="--s: 5rem">C</span>
+
+                <svg class="doodle" viewBox="0 0 64 64" style="--x: 40%; --y: 10%; --s: 5rem; --d: 20s; --r: 4rem">
+                    <circle cx="32" cy="32" r="26"/>
+                    <ellipse cx="32" cy="32" rx="11" ry="26"/>
+                    <path d="M6 32h52M10 18h44M10 46h44"/>
+                </svg>
+
+                <svg class="doodle" viewBox="0 0 64 64" style="--x: 18%; --y: 36%; --s: 5.5rem; --d: 17s; --r: 3rem">
+                    <rect x="4" y="10" width="56" height="44" rx="5"/>
+                    <path d="M4 22h56M12 16h.01M20 16h.01M28 16h.01M14 32h20M14 40h30"/>
+                </svg>
+
+                <svg class="doodle" viewBox="0 0 64 64" style="--x: 88%; --y: 82%; --s: 4rem; --d: 13s; --r: 3rem">
+                    <path d="M32 6a16 16 0 0 0-9 29v7h18v-7a16 16 0 0 0-9-29zM26 50h12M28 56h8"/>
+                </svg>
+            </div>
+            <div class="content">
+                <p class="badge">Sekolah Islam Terpadu Bandung</p>
+                <h1>Mencetak Generasi Islami, Cerdas, Terampil, dan Mandiri</h1>
+                <p class="lead">
+                    Profil Sekolah Islam Terpadu Al-Irsyad Al-Islamiyyah Bandung. Kami memadukan
+                    Kurikulum Nasional dan Kurikulum Khas Al-Irsyad dengan nilai-nilai Islam,
+                    berpijak pada manner before knowledge.
+                </p>
+                <a class="cta" href="about.html">Kenali Kami</a>
+                <p class="tag">#mannerbeforeknowledge</p>
+            </div>
+        </main>
+        
+        <section class="concepts">
+            <h2>Three Learning Concepts</h2>
+            <div class="orbit">
+                <div class="arm"><article>
+                    <h3>Islamic Manner</h3>
+                    <p>Adab kepada teman, guru, dan orang tua berdasarkan Qur'an dan Sunnah.</p>
+                </article></div>
+                <div class="arm"><article>
+                    <h3>Knowledge, Skill and Language</h3>
+                    <p>Program TTQ dan Math Mapping, karakter 5C, Bahasa Inggris dan Arab.</p>
+                </article></div>
+                <div class="arm"><article>
+                    <h3>Pembinaan Prestasi</h3>
+                    <p>Pemantapan, pengayaan, dan ekstrakurikuler sesuai minat dan bakat.</p>
+                </article></div>
+            </div>
+        </section>
+
+        <div class="footer-box">
+            <footer>Made by Alfaz and Gabriel</footer>
+            <footer>Buatan Alfaz dan Gabriel</footer>
+        </div>
+    </body>
+</html>
