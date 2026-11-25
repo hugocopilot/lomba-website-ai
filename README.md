@@ -23,12 +23,17 @@ Live demo: https://lomba-website-ai.vercel.app
 ```
 .
 ├── assets
+│   ├── al-irsyad-applogo.png
 │   ├── al-irsyad-logo.png
 │   ├── al-irysad-logolpp.png
 │   ├── itoshi_sae.jpeg
 │   ├── o1.png
 │   ├── o2.png
-│   └── o3.png
+│   ├── o3.png
+│   ├── playstore.png
+│   ├── preview1app.png
+│   ├── preview2app.png
+│   └── preview3app.png
 ├── css
 │   ├── about.css
 │   ├── contact.css
@@ -53,7 +58,7 @@ Live demo: https://lomba-website-ai.vercel.app
 ├── report.txt
 └── vercel.json
 
-5 directories, 26 files
+5 directories, 31 files
 ```
 
 ## Pengecek syarat
