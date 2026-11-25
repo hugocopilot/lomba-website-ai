@@ -62,12 +62,6 @@ a { color: inherit; text-decoration: none; }
     text-align: center;
 }
 
-.hero-bg {
-    position: relative;
-    overflow: clip;
-    flex: 1;
-}
-
 .doodles {
     --ink: rgba(52, 158, 154, 0.35);
     position: absolute;
@@ -107,7 +101,12 @@ svg.doodle {
     stroke-linejoin: round;
 }
 
-.hero-bg { display: grid; align-items: center; }
+.hero-bg {
+    position: relative;
+    overflow: clip;
+    display: grid;
+    align-items: center;
+}
 
 .content {
     position: relative;
