@@ -137,6 +137,14 @@ svg.doodle {
     box-shadow: 3px 3px #249e9a;
 }
 
+[data-mode="formal"] .doodles { display: none; }
+[data-mode="formal"] .orbit,
+[data-mode="formal"] .arm article { animation: none; }
+
+body.page-out { animation: page-out 0.4s ease forwards; }
+
+@keyframes page-out { to { opacity: 0; } }
+
 @keyframes spin { to { rotate: 360deg; } }
 
 @media (max-width: 700px), (prefers-reduced-motion: reduce) {
