@@ -81,3 +81,31 @@
 .arm article:hover { box-shadow: 8px 8px #249e9a; }
 .arm h3 { margin: 0 0 0.4rem; font-size: 1rem; }
 .arm p { margin: 0; font-size: 0.8rem; }
+
+.program { width: min(92%, 52rem); margin: 3rem auto; }
+.program h2 { text-align: center; }
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.5rem;
+}
+
+.program-card {
+    padding: 1.2rem 1.5rem;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 14px;
+    box-shadow: 4px 4px #249e9a;
+}
+
+.program-card h3 {
+    display: inline-block;
+    margin: 0 0 0.8rem;
+    padding: 0.3rem 1rem;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.program-card ul { margin: 0; padding-left: 1.2rem; display: grid; gap: 0.4rem; }
