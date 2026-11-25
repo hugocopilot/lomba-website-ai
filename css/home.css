@@ -142,3 +142,5 @@
 
 .play img { display: block; width: clamp(9rem, 20vw, 13rem); height: auto; transition: transform 0.2s ease; }
 .play:hover img, .play:focus-visible img { transform: translateY(-3px); }
+
+@keyframes spin { to { rotate: 360deg; } }
