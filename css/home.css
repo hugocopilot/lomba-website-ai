@@ -53,11 +53,11 @@
     animation: spin var(--t) linear infinite;
 }
 
-.stage { position: relative; width: min(70vw, 30rem); margin: 0 auto; }
+.stage { position: relative; width: min(75vw, 38rem); margin: 0 auto; }
 
 .hub {
     position: absolute;
-    inset: 22%;
+    inset: 25%;
     display: grid;
     place-items: center;
     padding: 1rem;
