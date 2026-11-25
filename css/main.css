@@ -162,6 +162,8 @@ svg.doodle {
 
 @media (prefers-reduced-motion: reduce) {
     .doodle { animation: none; }
+    .stage { width: auto; }
+    .hub { display: none; }
 }
 
 @media (max-width: 600px) {
