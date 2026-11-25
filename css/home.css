@@ -146,7 +146,7 @@
     text-align: center;
 }
 
-.edu { width: min(96%, 80rem); }
+.edu { grid-template-columns: minmax(0, 1fr); }
 .edu-logo { width: clamp(8rem, 22vw, 16rem); }
 
 .phones {

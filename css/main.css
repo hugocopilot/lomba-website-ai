@@ -147,12 +147,6 @@ body.page-out { animation: page-out 0.4s ease forwards; }
 
 @keyframes spin { to { rotate: 360deg; } }
 
-@media (max-width: 700px), (prefers-reduced-motion: reduce) {
-    .orbit { width: auto; aspect-ratio: auto; display: grid; gap: 1rem; border: 0; animation: none; }
-    .arm { position: static; rotate: none; }
-    .arm article { position: static; translate: none; transform: none; width: auto; animation: none; }
-}
-
 @keyframes page-in { from { opacity: 0; } }
 
 @keyframes drift {
@@ -189,3 +183,6 @@ body.page-out { animation: page-out 0.4s ease forwards; }
     .header-box nav { width: 100%; }
     .header-box nav a { flex: 1; text-align: center; padding: 0.4rem 0.2rem; font-size: 0.8rem; }
 }
+
+.stage { width: auto; }
+.hub { display: none; }
