@@ -1,0 +1,192 @@
+.hero-bg { grid-template-columns: minmax(0, 1fr); }
+.content { box-sizing: border-box; }
+.content h1 { font-size: clamp(1.4rem, 6.2vw, 3.2rem); overflow-wrap: anywhere; }
+
+.about-section {
+    box-sizing: border-box;
+    width: min(92%, 56rem);
+    margin: 4rem auto;
+}
+
+.about-section > h2,
+.about-cta h2 {
+    margin: 0 0 1.5rem;
+    text-align: center;
+}
+
+/* Profil singkat */
+.profile {
+    display: grid;
+    grid-template-columns: minmax(8rem, 14rem) 1fr;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 14px;
+    box-shadow: 4px 4px #249e9a;
+}
+
+.profile-logo { width: 100%; height: auto; }
+.profile-text h2 { margin: 0 0 0.8rem; }
+.profile-text p { margin: 0 0 0.8rem; line-height: 1.7; max-width: 60ch; }
+.profile-text p:last-child { margin-bottom: 0; }
+
+/* Visi dan misi */
+.vision-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.vision,
+.mission {
+    padding: 1.5rem;
+    border: 2px solid #000;
+    border-radius: 14px;
+    box-shadow: 4px 4px #249e9a;
+}
+
+.vision {
+    display: grid;
+    align-content: center;
+    background: #facc15;
+    color: #422006;
+    box-shadow: 4px 4px #422006;
+}
+
+.mission { background: #fff; }
+
+.vision h3,
+.mission h3 { margin: 0 0 0.8rem; }
+
+.vision-text {
+    margin: 0;
+    font-size: clamp(1.1rem, 2.6vw, 1.5rem);
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.mission ul {
+    margin: 0;
+    padding-left: 1.2rem;
+    display: grid;
+    gap: 0.7rem;
+    line-height: 1.6;
+}
+
+/* Nilai-nilai */
+.values {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.value {
+    --tone: #349e9a;
+    padding: 1.2rem 1.4rem 1.4rem;
+    background: #fff;
+    border: 2px solid #000;
+    border-top: 0.9rem solid var(--tone);
+    border-radius: 14px;
+    box-shadow: 4px 4px var(--tone);
+}
+
+.value h3 { margin: 0 0 0.5rem; }
+.value p { margin: 0; font-size: 0.9rem; line-height: 1.6; }
+
+.value-adab { --tone: #16a34a; }
+.value-ilmu { --tone: #1e3a8a; }
+.value-terampil { --tone: #facc15; }
+.value-prestasi { --tone: #38bdf8; }
+
+/* Program unggulan (sama seperti home) */
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.5rem;
+}
+
+.program-card {
+    padding: 1.2rem 1.5rem;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 14px;
+    box-shadow: 4px 4px #249e9a;
+}
+
+.program-card h3 {
+    display: inline-block;
+    margin: 0 0 0.8rem;
+    padding: 0.3rem 1rem;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.program-card ul { margin: 0; padding-left: 1.2rem; display: grid; gap: 0.4rem; }
+
+/* CTA */
+.about-cta {
+    width: min(92%, 40rem);
+    margin: 5rem auto;
+    text-align: center;
+}
+
+.cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.cta {
+    display: inline-block;
+    padding: 0.9rem 1.8rem;
+    background: #facc15;
+    color: #422006;
+    border: 2px solid #000;
+    border-radius: 14px;
+    font-weight: 700;
+    box-shadow: 4px 4px #422006;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-alt {
+    background: #fff;
+    color: #0f172a;
+    box-shadow: 4px 4px #249e9a;
+}
+
+.cta:hover,
+.cta:focus-visible { transform: translate(-2px, -2px); box-shadow: 6px 6px #422006; }
+.cta-alt:hover,
+.cta-alt:focus-visible { box-shadow: 6px 6px #249e9a; }
+.cta:active { transform: translate(2px, 2px); box-shadow: 2px 2px #422006; }
+.cta-alt:active { box-shadow: 2px 2px #249e9a; }
+
+/* Responsif */
+@media (max-width: 860px) {
+    .values { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 480px) {
+    .values { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+    .profile {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        padding: 1.2rem;
+        text-align: center;
+    }
+    .profile-logo { width: min(55%, 12rem); }
+    .vision-grid { grid-template-columns: 1fr; }
+    .about-section { margin: 3rem auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+}
