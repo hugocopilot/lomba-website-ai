@@ -144,3 +144,11 @@
 .play:hover img, .play:focus-visible img { transform: translateY(-3px); }
 
 @keyframes spin { to { rotate: 360deg; } }
+
+@media (max-width: 700px), (prefers-reduced-motion: reduce) {
+    .stage { width: auto; }
+    .hub { display: none; }
+    .orbit { width: auto; aspect-ratio: auto; display: grid; gap: 1rem; border: 0; animation: none; }
+    .arm { position: static; rotate: none; }
+    .arm article { position: static; translate: none; transform: none; width: auto; animation: none; }
+}
