@@ -1,5 +1,12 @@
 const rand = (a, b) => a + Math.random() * (b - a);
 const PALETTE = ["52,158,154", "22,163,74", "250,204,21", "56,189,248"];
+const SPEED = [15, 40];
+const GAP = 10;
+
+const layer = document.querySelector(".doodles");
+const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let bodies = [], W = 0, H = 0, last = 0, visible = true;
+let frame = 0, mx = 0, my = 0;
 
 function shuffle(list) {
     for (let i = list.length - 1; i > 0; i--) {
@@ -9,20 +16,15 @@ function shuffle(list) {
     return list;
 }
 
-function randomize(el, x, y, k) {
+function randomize(el, x, y) {
     const { width, height } = el.getBoundingClientRect();
     const depth = Math.min(1, Math.max(0.35, Math.sqrt(width * height) / 110));
     const rgb = PALETTE[Math.floor(Math.random() * PALETTE.length)];
-    const d = rand(14, 24) * (1.6 - depth);
     const set = (name, value) => el.style.setProperty(name, value);
     set("--x", `${x}px`);
     set("--y", `${y}px`);
-    set("--d", `${d}s`);
     set("--sw", `${rand(6, 14)}s`);
-    set("--r", `${rand(2.5, 6) * k * (0.6 + depth)}rem`);
     set("--a", `${rand(6, 18)}deg`);
-    set("--dir", Math.random() < 0.5 ? -1 : 1);
-    set("--t1", `${-rand(0, d)}s`);
     set("--t2", `${-rand(0, 14)}s`);
     set("--e", `${rand(0, 1.2)}s`);
     set("--z", Math.round(depth * 50));
@@ -31,13 +33,23 @@ function randomize(el, x, y, k) {
     set("--f", `rgba(${rgb}, 0.3)`);
 }
 
+function makeBody({ el, x, y }, k) {
+    const cs = getComputedStyle(el);
+    const angle = rand(0, Math.PI * 2);
+    const speed = rand(SPEED[0], SPEED[1]) * k;
+    return {
+        el, x, y, x0: x, y0: y,
+        w: parseFloat(cs.width), h: parseFloat(cs.height),
+        vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed,
+    };
+}
+
 function scatter() {
-    const box = document.querySelector(".doodles");
-    if (!box) return;
-    const W = box.clientWidth;
-    const H = box.clientHeight;
+    if (!layer || !layer.clientWidth) return;
+    W = layer.clientWidth;
+    H = layer.clientHeight;
     const small = W < 600;
-    const all = shuffle([...box.querySelectorAll(".doodle")]);
+    const all = shuffle([...layer.querySelectorAll(".doodle")]);
     const max = small ? 6 : Math.min(10, all.length);
     all.forEach((el, i) => { el.style.display = i < max ? "" : "none"; });
     const items = all.slice(0, max);
@@ -46,28 +58,57 @@ function scatter() {
     const cells = shuffle([...Array(cols * rows).keys()]);
     const cw = W / cols;
     const ch = H / rows;
-    items.forEach((el, i) => {
+    const placed = items.map((el, i) => {
         const { width, height } = el.getBoundingClientRect();
         const x = (cells[i] % cols) * cw + rand(0, Math.max(0, cw - width));
         const y = Math.floor(cells[i] / cols) * ch + rand(0, Math.max(0, ch - height));
-        randomize(el, x, y, small ? 0.4 : 1);
+        randomize(el, x, y);
+        return { el, x, y };
     });
+    bodies = still ? [] : placed.map((p) => makeBody(p, small ? 0.6 : 1));
 }
 
-document.fonts.ready.then(scatter);
-
-let wasSmall = innerWidth < 600;
-addEventListener("resize", () => {
-    const isSmall = innerWidth < 600;
-    if (isSmall !== wasSmall) {
-        wasSmall = isSmall;
-        scatter();
+function collide(a, b) {
+    const dx = a.x + a.w / 2 - (b.x + b.w / 2);
+    const dy = a.y + a.h / 2 - (b.y + b.h / 2);
+    const ox = (a.w + b.w) / 2 + GAP - Math.abs(dx);
+    const oy = (a.h + b.h) / 2 + GAP - Math.abs(dy);
+    if (ox <= 0 || oy <= 0) return;
+    if (ox < oy) {
+        const s = dx < 0 ? -1 : 1;
+        a.x += (s * ox) / 2;
+        b.x -= (s * ox) / 2;
+        if ((a.vx - b.vx) * s < 0) [a.vx, b.vx] = [b.vx, a.vx];
+    } else {
+        const s = dy < 0 ? -1 : 1;
+        a.y += (s * oy) / 2;
+        b.y -= (s * oy) / 2;
+        if ((a.vy - b.vy) * s < 0) [a.vy, b.vy] = [b.vy, a.vy];
     }
-});
+}
 
-const layer = document.querySelector(".doodles");
-const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-let frame = 0, mx = 0, my = 0;
+function step(now) {
+    const dt = Math.min(0.05, (now - last) / 1000);
+    last = now;
+    for (const b of bodies) {
+        b.x += b.vx * dt;
+        b.y += b.vy * dt;
+        if (b.x < 0) { b.x = 0; b.vx = Math.abs(b.vx); }
+        else if (b.x > W - b.w) { b.x = Math.max(0, W - b.w); b.vx = -Math.abs(b.vx); }
+        if (b.y < 0) { b.y = 0; b.vy = Math.abs(b.vy); }
+        else if (b.y > H - b.h) { b.y = Math.max(0, H - b.h); b.vy = -Math.abs(b.vy); }
+    }
+    for (let i = 0; i < bodies.length; i++) {
+        for (let j = i + 1; j < bodies.length; j++) collide(bodies[i], bodies[j]);
+    }
+    for (const b of bodies) b.el.style.translate = `${b.x - b.x0}px ${b.y - b.y0}px`;
+}
+
+function tick(now) {
+    if (visible) step(now);
+    else last = now;
+    requestAnimationFrame(tick);
+}
 
 function follow() {
     layer.style.setProperty("--mx", mx);
@@ -76,6 +117,21 @@ function follow() {
 }
 
 if (layer) {
+    document.fonts.ready.then(scatter);
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(layer);
+    if (!still) requestAnimationFrame((t) => { last = t; tick(t); });
+
+    let wasSmall = innerWidth < 600;
+    addEventListener("resize", () => {
+        W = layer.clientWidth;
+        H = layer.clientHeight;
+        const isSmall = innerWidth < 600;
+        if (isSmall !== wasSmall) {
+            wasSmall = isSmall;
+            scatter();
+        }
+    });
+
     addEventListener("pointermove", (e) => {
         if (still || e.pointerType !== "mouse") return;
         mx = e.clientX / innerWidth - 0.5;
