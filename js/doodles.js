@@ -1,4 +1,5 @@
 const rand = (a, b) => a + Math.random() * (b - a);
+const PALETTE = ["52,158,154", "22,163,74", "250,204,21", "56,189,248"];
 
 function shuffle(list) {
     for (let i = list.length - 1; i > 0; i--) {
@@ -9,17 +10,25 @@ function shuffle(list) {
 }
 
 function randomize(el, x, y, k) {
-    const d = rand(12, 22);
+    const { width, height } = el.getBoundingClientRect();
+    const depth = Math.min(1, Math.max(0.35, Math.sqrt(width * height) / 110));
+    const rgb = PALETTE[Math.floor(Math.random() * PALETTE.length)];
+    const d = rand(14, 24) * (1.6 - depth);
     const set = (name, value) => el.style.setProperty(name, value);
     set("--x", `${x}px`);
     set("--y", `${y}px`);
     set("--d", `${d}s`);
     set("--sw", `${rand(6, 14)}s`);
-    set("--r", `${rand(2.5, 6) * k}rem`);
+    set("--r", `${rand(2.5, 6) * k * (0.6 + depth)}rem`);
     set("--a", `${rand(6, 18)}deg`);
     set("--dir", Math.random() < 0.5 ? -1 : 1);
     set("--t1", `${-rand(0, d)}s`);
     set("--t2", `${-rand(0, 14)}s`);
+    set("--e", `${rand(0, 1.2)}s`);
+    set("--z", Math.round(depth * 50));
+    set("--ink", `rgba(${rgb}, ${0.22 + depth * 0.3})`);
+    set("--c", `rgba(${rgb}, 0.85)`);
+    set("--f", `rgba(${rgb}, 0.3)`);
 }
 
 function scatter() {
