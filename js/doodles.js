@@ -33,11 +33,12 @@ function randomize(el, x, y, k) {
 
 function scatter() {
     const box = document.querySelector(".doodles");
+    if (!box) return;
     const W = box.clientWidth;
     const H = box.clientHeight;
     const small = W < 600;
     const all = shuffle([...box.querySelectorAll(".doodle")]);
-    const max = small ? 6 : all.length;
+    const max = small ? 6 : Math.min(10, all.length);
     all.forEach((el, i) => { el.style.display = i < max ? "" : "none"; });
     const items = all.slice(0, max);
     const cols = small ? 2 : 4;
@@ -74,9 +75,11 @@ function follow() {
     frame = 0;
 }
 
-addEventListener("pointermove", (e) => {
-    if (still || e.pointerType !== "mouse") return;
-    mx = e.clientX / innerWidth - 0.5;
-    my = e.clientY / innerHeight - 0.5;
-    if (!frame) frame = requestAnimationFrame(follow);
-});
+if (layer) {
+    addEventListener("pointermove", (e) => {
+        if (still || e.pointerType !== "mouse") return;
+        mx = e.clientX / innerWidth - 0.5;
+        my = e.clientY / innerHeight - 0.5;
+        if (!frame) frame = requestAnimationFrame(follow);
+    });
+}
