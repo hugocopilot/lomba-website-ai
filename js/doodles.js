@@ -63,3 +63,20 @@ addEventListener("resize", () => {
         scatter();
     }
 });
+
+const layer = document.querySelector(".doodles");
+const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let frame = 0, mx = 0, my = 0;
+
+function follow() {
+    layer.style.setProperty("--mx", mx);
+    layer.style.setProperty("--my", my);
+    frame = 0;
+}
+
+addEventListener("pointermove", (e) => {
+    if (still || e.pointerType !== "mouse") return;
+    mx = e.clientX / innerWidth - 0.5;
+    my = e.clientY / innerHeight - 0.5;
+    if (!frame) frame = requestAnimationFrame(follow);
+});
