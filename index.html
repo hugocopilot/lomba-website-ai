@@ -8,13 +8,11 @@
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Amiri&display=swap" rel="stylesheet">
         <title>SMPIT Al-Irsyad Al-Islamiyyah Bandung</title>
         <script>
-            try {
-                var saved = localStorage.getItem("mode");
-                if (saved) {
-                    document.documentElement.dataset.mode = saved;
-                    document.documentElement.dataset.returning = "1";
-                }
-            } catch (e) {}
+        try {
+            var saved = localStorage.getItem("mode");
+            var calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+            document.documentElement.dataset.mode = saved || (calm ? "formal" : "interactive");
+        } catch (e) {}
         </script>
         <link rel="stylesheet" href="css/splash.css" />
         <script src="js/transition.js" defer></script>

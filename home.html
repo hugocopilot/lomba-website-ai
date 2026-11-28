@@ -10,7 +10,11 @@
         <script src="js/doodles.js" defer></script>
         <script src="js/concepts.js" defer></script>
         <script>
-        try { document.documentElement.dataset.mode = localStorage.getItem("mode") || "interactive"; } catch (e) {}
+        try {
+            var saved = localStorage.getItem("mode");
+            var calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+            document.documentElement.dataset.mode = saved || (calm ? "formal" : "interactive");
+        } catch (e) {}
         </script>
         <script src="js/transition.js" defer></script>
     </head>
