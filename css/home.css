@@ -40,7 +40,7 @@
     border: 1px solid rgba(255, 255, 255, 0.9);
     -webkit-backdrop-filter: blur(12px) saturate(140%);
     backdrop-filter: blur(12px) saturate(140%);
-    box-shadow: 0 8px 32px rgba(52, 158, 154, 0.25), inset 0 0 20px rgba(255, 255, 255, 0.6);
+    outline: 2px #000;
 }
 
 .hub > * {
@@ -145,7 +145,7 @@
 
 @keyframes spin { to { rotate: 360deg; } }
 
-@media (max-width: 700px), (prefers-reduced-motion: reduce) {
+@media (max-width: 700px) {
     .stage { width: auto; }
     .hub { display: none; }
     .orbit { width: auto; aspect-ratio: auto; display: grid; gap: 1rem; border: 0; animation: none; }
