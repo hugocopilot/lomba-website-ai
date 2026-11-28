@@ -11,7 +11,6 @@ const MOVES = [
 
 const layer = document.querySelector(".doodles");
 const isStill = () => document.documentElement.dataset.mode === "formal";
-bodies = isStill() ? [] : placed.map((p) => makeBody(p, small ? 0.6 : 1));
 let bodies = [], W = 0, H = 0, last = 0, visible = true;
 let frame = 0, mx = 0, my = 0;
 
@@ -58,7 +57,6 @@ function makeBody({ el, x, y, depth }, k) {
 
 function scatter() {
     if (!layer || !layer.clientWidth) return;
-    if (visible && !isStill()) step(now);
     W = layer.clientWidth;
     H = layer.clientHeight;
     const small = W < 600;
@@ -80,7 +78,7 @@ function scatter() {
         el.style.setProperty("--y", `${y}px`);
         return { el, x, y, depth };
     });
-    bodies = still ? [] : placed.map((p) => makeBody(p, small ? 0.6 : 1));
+    bodies = isStill() ? [] : placed.map((p) => makeBody(p, small ? 0.6 : 1));
     layer.classList.add("ready");
 }
 
@@ -121,7 +119,7 @@ function step(now) {
 }
 
 function tick(now) {
-    if (visible) requestAnimationFrame((t) => { last = t; tick(t); });
+    if (visible && !isStill()) step(now);
     else last = now;
     requestAnimationFrame(tick);
 }
@@ -134,8 +132,9 @@ function follow() {
 
 if (layer) {
     document.fonts.ready.then(scatter);
+    document.addEventListener("modechange", scatter);
     new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(layer);
-    if (isStill() || e.pointerType !== "mouse") return;
+    requestAnimationFrame((t) => { last = t; tick(t); });
 
     let wasSmall = innerWidth < 600;
     addEventListener("resize", () => {
@@ -149,7 +148,7 @@ if (layer) {
     });
 
     addEventListener("pointermove", (e) => {
-        if (still || e.pointerType !== "mouse") return;
+        if (isStill() || e.pointerType !== "mouse") return;
         mx = e.clientX / innerWidth - 0.5;
         my = e.clientY / innerHeight - 0.5;
         if (!frame) frame = requestAnimationFrame(follow);
