@@ -1,7 +1,11 @@
 const rand = (a, b) => a + Math.random() * (b - a);
 const PALETTE = ["52,158,154", "22,163,74", "250,204,21", "56,189,248"];
-const SPEED = [15, 40];
 const GAP = 10;
+const MOVES = [
+    { move: "sway", dirn: "alternate", ease: "ease-in-out", time: [5, 14] },
+    { move: "turn", dirn: "normal", ease: "linear", time: [30, 70] },
+    { move: "bob", dirn: "alternate", ease: "ease-in-out", time: [3, 7] },
+];
 
 const layer = document.querySelector(".doodles");
 const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -16,27 +20,32 @@ function shuffle(list) {
     return list;
 }
 
-function randomize(el, x, y) {
-    const { width, height } = el.getBoundingClientRect();
-    const depth = Math.min(1, Math.max(0.35, Math.sqrt(width * height) / 110));
+function restyle(el) {
+    el.dataset.s ||= parseFloat(el.style.getPropertyValue("--s"));
+    const depth = rand(0.35, 1);
+    const m = MOVES[Math.floor(Math.random() * MOVES.length)];
     const rgb = PALETTE[Math.floor(Math.random() * PALETTE.length)];
     const set = (name, value) => el.style.setProperty(name, value);
-    set("--x", `${x}px`);
-    set("--y", `${y}px`);
-    set("--sw", `${rand(6, 14)}s`);
+    set("--s", `${el.dataset.s * (0.6 + depth * 0.8)}rem`);
+    set("--move", m.move);
+    set("--dirn", m.dirn);
+    set("--ease", m.ease);
+    set("--sw", `${rand(...m.time)}s`);
     set("--a", `${rand(6, 18)}deg`);
     set("--t2", `${-rand(0, 14)}s`);
     set("--e", `${rand(0, 1.2)}s`);
-    set("--z", Math.round(depth * 50));
-    set("--ink", `rgba(${rgb}, ${0.22 + depth * 0.3})`);
+    set("--z", Math.round(depth * 60));
+    set("--ink", `rgba(${rgb}, ${0.15 + depth * 0.4})`);
     set("--c", `rgba(${rgb}, 0.85)`);
     set("--f", `rgba(${rgb}, 0.3)`);
+    el.style.translate = "";
+    return depth;
 }
 
-function makeBody({ el, x, y }, k) {
+function makeBody({ el, x, y, depth }, k) {
     const cs = getComputedStyle(el);
     const angle = rand(0, Math.PI * 2);
-    const speed = rand(SPEED[0], SPEED[1]) * k;
+    const speed = rand(12, 50) * k * (0.4 + depth * 1.2);
     return {
         el, x, y, x0: x, y0: y,
         w: parseFloat(cs.width), h: parseFloat(cs.height),
@@ -59,13 +68,16 @@ function scatter() {
     const cw = W / cols;
     const ch = H / rows;
     const placed = items.map((el, i) => {
+        const depth = restyle(el);
         const { width, height } = el.getBoundingClientRect();
         const x = (cells[i] % cols) * cw + rand(0, Math.max(0, cw - width));
         const y = Math.floor(cells[i] / cols) * ch + rand(0, Math.max(0, ch - height));
-        randomize(el, x, y);
-        return { el, x, y };
+        el.style.setProperty("--x", `${x}px`);
+        el.style.setProperty("--y", `${y}px`);
+        return { el, x, y, depth };
     });
     bodies = still ? [] : placed.map((p) => makeBody(p, small ? 0.6 : 1));
+    layer.classList.add("ready");
 }
 
 function collide(a, b) {
