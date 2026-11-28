@@ -3,6 +3,7 @@
 const rand = (a, b) => a + Math.random() * (b - a);
 const PALETTE = ["52,158,154", "22,163,74", "250,204,21", "56,189,248"];
 const GAP = 10;
+const OVERLAP = 0.5;
 const MOVES = [
     { move: "sway", dirn: "alternate", ease: "ease-in-out", time: [5, 14] },
     { move: "turn", dirn: "normal", ease: "linear", time: [30, 70] },
@@ -107,15 +108,14 @@ function step(now) {
     for (const b of bodies) {
         b.x += b.vx * dt;
         b.y += b.vy * dt;
-        if (b.x < 0) { b.x = 0; b.vx = Math.abs(b.vx); }
-        else if (b.x > W - b.w) { b.x = Math.max(0, W - b.w); b.vx = -Math.abs(b.vx); }
-        if (b.y < 0) { b.y = 0; b.vy = Math.abs(b.vy); }
-        else if (b.y > H - b.h) { b.y = Math.max(0, H - b.h); b.vy = -Math.abs(b.vy); }
+        const ox = b.w * OVERLAP, oy = b.h * OVERLAP;
+        const maxX = Math.max(-ox, W - b.w + ox);
+        const maxY = Math.max(-oy, H - b.h + oy);
+        if (b.x < -ox) { b.x = -ox; b.vx = Math.abs(b.vx); }
+        else if (b.x > maxX) { b.x = maxX; b.vx = -Math.abs(b.vx); }
+        if (b.y < -oy) { b.y = -oy; b.vy = Math.abs(b.vy); }
+        else if (b.y > maxY) { b.y = maxY; b.vy = -Math.abs(b.vy); }
     }
-    for (let i = 0; i < bodies.length; i++) {
-        for (let j = i + 1; j < bodies.length; j++) collide(bodies[i], bodies[j]);
-    }
-    for (const b of bodies) b.el.style.translate = `${b.x - b.x0}px ${b.y - b.y0}px`;
 }
 
 function tick(now) {
