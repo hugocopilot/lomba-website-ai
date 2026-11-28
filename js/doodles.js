@@ -10,7 +10,8 @@ const MOVES = [
 ];
 
 const layer = document.querySelector(".doodles");
-const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const isStill = () => document.documentElement.dataset.mode === "formal";
+bodies = isStill() ? [] : placed.map((p) => makeBody(p, small ? 0.6 : 1));
 let bodies = [], W = 0, H = 0, last = 0, visible = true;
 let frame = 0, mx = 0, my = 0;
 
@@ -57,6 +58,7 @@ function makeBody({ el, x, y, depth }, k) {
 
 function scatter() {
     if (!layer || !layer.clientWidth) return;
+    if (visible && !isStill()) step(now);
     W = layer.clientWidth;
     H = layer.clientHeight;
     const small = W < 600;
@@ -119,7 +121,7 @@ function step(now) {
 }
 
 function tick(now) {
-    if (visible) step(now);
+    if (visible) requestAnimationFrame((t) => { last = t; tick(t); });
     else last = now;
     requestAnimationFrame(tick);
 }
@@ -133,7 +135,7 @@ function follow() {
 if (layer) {
     document.fonts.ready.then(scatter);
     new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(layer);
-    if (!still) requestAnimationFrame((t) => { last = t; tick(t); });
+    if (isStill() || e.pointerType !== "mouse") return;
 
     let wasSmall = innerWidth < 600;
     addEventListener("resize", () => {
