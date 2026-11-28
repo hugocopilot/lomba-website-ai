@@ -68,6 +68,7 @@
     transform: rotate(calc(var(--i) * var(--step) * -1));
     animation: spin var(--t) linear infinite reverse;
     pointer-events: auto;
+    box-sizing: border-box;
     width: 12rem;
     padding: 1rem;
     background: #fff;
@@ -110,12 +111,12 @@
 
 .edu {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
     justify-items: center;
     gap: 1.2rem;
     width: min(92%, 64rem);
     margin: 4rem auto;
     text-align: center;
+    grid-template-columns: minmax(0, 1fr); 
 }
 
 .edu-logo { width: clamp(8rem, 22vw, 16rem); }
@@ -144,15 +145,10 @@
 
 @keyframes spin { to { rotate: 360deg; } }
 
-@media (max-width: 700px) {
-    .stage { width: min(92%, 40rem); }
+@media (max-width: 700px), (prefers-reduced-motion: reduce) {
+    .stage { width: auto; }
     .hub { display: none; }
     .orbit { width: auto; aspect-ratio: auto; display: grid; gap: 1rem; border: 0; animation: none; }
     .arm { position: static; rotate: none; }
     .arm article { position: static; translate: none; transform: none; width: auto; animation: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .orbit,
-    .arm article { animation: none; }
 }
