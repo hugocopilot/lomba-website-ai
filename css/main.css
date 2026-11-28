@@ -9,10 +9,10 @@ body {
     flex-direction: column;
     font-family: "JetBrains Mono", monospace;
     background:
-        radial-gradient(circle at 12% 30%, rgba(250, 204, 21, 0.35), transparent 20rem) 0 0 / 100% 70rem repeat-y,
-        radial-gradient(circle at 88% 70%, rgba(14, 116, 144, 0.2), transparent 22rem) 0 0 / 100% 70rem repeat-y,
-        linear-gradient(180deg, #61ceca, #c9f1ea 48rem) top / 100% 48rem no-repeat,
-        #c9f1ea;
+        radial-gradient(circle at 12% 30%, rgba(250, 204, 21, 0.25), transparent 18rem) 0 0 / 100% 70rem repeat-y,
+        radial-gradient(circle at 88% 70%, rgba(56, 189, 248, 0.25), transparent 20rem) 0 0 / 100% 70rem repeat-y,
+        linear-gradient(180deg, #61ceca, #ecfdf5 48rem) top / 100% 48rem no-repeat,
+        #ecfdf5;
     animation: page-in 0.4s ease both;
 }
 
