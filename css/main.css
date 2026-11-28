@@ -1,6 +1,8 @@
 *, *::before, *::after { box-sizing: border-box; }
 
-html { overflow-x: clip; }
+html {
+    overflow-x: clip;
+}
 
 body {
     margin: 0;
@@ -8,11 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: "JetBrains Mono", monospace;
-    background:
-        radial-gradient(circle at 12% 30%, rgba(250, 204, 21, 0.25), transparent 18rem) 0 0 / 100% 70rem repeat-y,
-        radial-gradient(circle at 88% 70%, rgba(56, 189, 248, 0.25), transparent 20rem) 0 0 / 100% 70rem repeat-y,
-        linear-gradient(180deg, #61ceca, #ecfdf5 48rem) top / 100% 48rem no-repeat,
-        #ecfdf5;
+    background: #ecfdf5 linear-gradient(180deg, #61ceca, #ecfdf5 95%);
     animation: page-in 0.4s ease both;
 }
 
@@ -25,6 +23,7 @@ a { color: inherit; text-decoration: none; }
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 0.5rem 1.5rem;
+    box-sizing: border-box;
     width: min(95%, 60rem);
     margin: 0.8rem auto 0;
     padding: 0.8rem 1.5rem;
@@ -38,7 +37,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .header-box img { display: block; height: 2rem; flex-shrink: 0; }
-.header-box nav { display: flex; flex-wrap: nowrap; gap: 0.4rem; }
+.header-box nav { display: flex; flex-wrap: nowrap; gap: 0.4rem;}
 
 .header-box a {
     padding: 0.5rem 1rem;
@@ -61,6 +60,45 @@ a { color: inherit; text-decoration: none; }
     background: linear-gradient(180deg, #349e9a, #61ceca);
     color: #ffffff;
     text-align: center;
+}
+
+.doodles {
+    --ink: rgba(52, 158, 154, 0.35);
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.doodle {
+    --r: 3rem;
+    --dir: 1;
+    --a: 10deg;
+    --d: 15s;
+    --sw: 10s;
+    --t1: 0s;
+    --t2: 0s;
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    font-size: var(--s);
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--ink);
+    animation:
+        drift var(--d) ease-in-out var(--t1) infinite,
+        sway var(--sw) ease-in-out var(--t2) infinite alternate;
+}
+
+svg.doodle {
+    width: var(--s);
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .hero-bg {
@@ -98,78 +136,41 @@ a { color: inherit; text-decoration: none; }
     box-shadow: 3px 3px #249e9a;
 }
 
-.doodles {
-    --ink: rgba(52, 158, 154, 0.35);
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.doodle {
-    --move: sway;
-    --dirn: alternate;
-    --ease: ease-in-out;
-    --a: 10deg;
-    --sw: 10s;
-    --t2: 0s;
-    --e: 0s;
-    --z: 0;
-    --h: 1;
-    position: absolute;
-    left: var(--x);
-    top: var(--y);
-    font-size: var(--s);
-    font-weight: 700;
-    line-height: 1;
-    white-space: nowrap;
-    color: transparent;
-    -webkit-text-stroke: 2px var(--ink);
-    pointer-events: auto;
-    transform: translate(calc(var(--mx, 0) * var(--z) * -1px), calc(var(--my, 0) * var(--z) * -1px)) scale(var(--h));
-    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s, fill 0.3s;
-    animation-name: appear, var(--move);
-    animation-duration: 1s, var(--sw);
-    animation-timing-function: ease, var(--ease);
-    animation-delay: var(--e), var(--t2);
-    animation-iteration-count: 1, infinite;
-    animation-direction: normal, var(--dirn);
-    animation-fill-mode: both, none;
-}
-
-.doodles:not(.ready) .doodle { animation-play-state: paused; }
-
-svg.doodle {
-    width: var(--s);
-    fill: transparent;
-    stroke: var(--ink);
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-svg.doodle * { vector-effect: non-scaling-stroke; }
-
-@media (hover: hover) {
-    .doodle:hover { --h: 1.3; color: var(--c); }
-    svg.doodle:hover { fill: var(--f); }
-}
-
 [data-mode="formal"] .doodles { display: none; }
 [data-mode="formal"] .orbit,
 [data-mode="formal"] .arm article { animation: none; }
 
 body.page-out { animation: page-out 0.4s ease forwards; }
 
-@keyframes page-in { from { opacity: 0; } }
 @keyframes page-out { to { opacity: 0; } }
-@keyframes appear { from { opacity: 0; } }
-@keyframes sway { from { rotate: calc(var(--a) * -1); scale: 0.95; } to { rotate: var(--a); scale: 1.08; } }
-@keyframes turn { to { rotate: 360deg; } }
-@keyframes bob { from { scale: 0.85; } to { scale: 1.2; } }
+
+@keyframes page-in { from { opacity: 0; } }
+
+@keyframes drift {
+    0%   { translate: 0 0; }
+    25%  { translate: calc(var(--r) * var(--dir)) calc(var(--r) * -0.6); }
+    50%  { translate: calc(var(--r) * var(--dir) * 0.3) calc(var(--r) * -1.2); }
+    75%  { translate: calc(var(--r) * var(--dir) * -0.8) calc(var(--r) * -0.5); }
+    100% { translate: 0 0; }
+}
+
+@keyframes sway {
+    from { rotate: calc(var(--a) * -1); scale: 0.95; }
+    to   { rotate: var(--a); scale: 1.08; }
+}
 
 @media (prefers-reduced-motion: reduce) {
     .doodle { animation: none; }
+}
+
+@keyframes spin { to { rotate: 360deg; } }
+
+@media (max-width: 700px), (prefers-reduced-motion: reduce) {
+    .stage { width: auto; }
+    .hub { display: none; }
+    .orbit { width: auto; aspect-ratio: auto; display: grid; gap: 1rem; border: 0; animation: none; }
+    .arm { position: static; rotate: none; }
+    .arm article { position: static; translate: none; transform: none; width: auto; animation: none; }
 }
 
 @media (max-width: 600px) {
