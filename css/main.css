@@ -165,12 +165,17 @@ body.page-out { animation: page-out 0.4s ease forwards; }
 
 @keyframes spin { to { rotate: 360deg; } }
 
-@media (max-width: 700px), (prefers-reduced-motion: reduce) {
-    .stage { width: auto; }
+@media (max-width: 700px) {
+    .stage { width: min(92%, 40rem); }
     .hub { display: none; }
     .orbit { width: auto; aspect-ratio: auto; display: grid; gap: 1rem; border: 0; animation: none; }
     .arm { position: static; rotate: none; }
     .arm article { position: static; translate: none; transform: none; width: auto; animation: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .orbit,
+    .arm article { animation: none; }
 }
 
 @media (max-width: 600px) {
