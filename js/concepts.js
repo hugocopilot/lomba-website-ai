@@ -1,3 +1,5 @@
+(() => {
+
 const SLOW_DOWN = 2.5;
 const SPEED_UP = 1;
 
@@ -41,3 +43,5 @@ orbit.addEventListener("pointerleave", () => {
     setTarget(1);
     stage.classList.remove("showing");
 });
+
+})();

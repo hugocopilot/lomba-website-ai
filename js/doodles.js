@@ -1,3 +1,5 @@
+(() => {
+
 const rand = (a, b) => a + Math.random() * (b - a);
 const PALETTE = ["52,158,154", "22,163,74", "250,204,21", "56,189,248"];
 const GAP = 10;
@@ -151,3 +153,5 @@ if (layer) {
         if (!frame) frame = requestAnimationFrame(follow);
     });
 }
+
+})();
